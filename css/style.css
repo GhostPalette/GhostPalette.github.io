@@ -1,0 +1,13 @@
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+}
