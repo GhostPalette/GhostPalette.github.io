@@ -1,10 +1,19 @@
 // Variables
-$base-orange: #ffdaad;
+$base-sage: #22A888;
+$base-sage-lt: #9BDAD6;
+$base-orange: #FFBC6E;
 $base-pink: #ffcece;
 
 // General
 body {
   margin: 0;
+
+  font-family: "Sometype Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color: black;
 }
 img {
   max-height: 100%;
@@ -15,24 +24,49 @@ img {
   margin: auto;
   padding: 0 1rem;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Fonts
+a {
+  color: $base-sage;
+  transition: 0.15s linear color;
+  &:hover {
+    color: $base-sage-lt;
+  }
+}
 
 // Header
 header {
   background: $base-orange;
+  border-bottom: 6px solid $base-sage;
   .container {
-    padding: 1rem;
+    padding: 2rem 0 .75rem;
     // display: flex;
     // align-items: center;
     // justify-content: space-between;
   }
   .logo {
-    width: 200px;
-    height: 200px;
     position: absolute;
+    width: 9rem;
+    height: 9rem;
+    margin-top: -0.5rem;
   }
   .menu {
     text-align: right;
     a {
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 0.5rem;

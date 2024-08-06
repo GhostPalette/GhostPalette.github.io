@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  font-family: "Sometype Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
 }
 
 img {
@@ -13,21 +18,46 @@ img {
   padding: 0 1rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+a {
+  color: #22A888;
+  transition: 0.15s linear color;
+}
+a:hover {
+  color: #9BDAD6;
+}
+
 header {
-  background: #ffdaad;
+  background: #FFBC6E;
+  border-bottom: 6px solid #22A888;
 }
 header .container {
-  padding: 1rem;
+  padding: 2rem 0 0.75rem;
 }
 header .logo {
-  width: 200px;
-  height: 200px;
   position: absolute;
+  width: 9rem;
+  height: 9rem;
+  margin-top: -0.5rem;
 }
 header .menu {
   text-align: right;
 }
 header .menu a {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 0.5rem;
