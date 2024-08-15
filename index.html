@@ -3,55 +3,96 @@
   <head>
     <title>Ghost Palette</title>
 
-    <!-- Import fonts, scripts, etc. in the head -->
+    <!-- Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Comfortaa:wght@300..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
-    <link href="/css/style.css" rel="stylesheet">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/d689af0046.js" crossorigin="anonymous"></script>
+
+    <!-- CSS and JS -->
+    <!-- <link href="/css/style.css" rel="stylesheet">
     <script src="/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="/js/code.js" crossorigin="anonymous"></script> -->
 
-    <!-- <link href="/Temp%20D%20Folder/Documents/Code/GhostPalette.github.io/css/style.css" rel="stylesheet">
-    <script src="/Temp%20D%20Folder/Documents/Code/GhostPalette.github.io/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script> -->
+    <link href="/Temp%20D%20Folder/Documents/Code/GhostPalette.github.io/css/style.css" rel="stylesheet">
+    <script src="/Temp%20D%20Folder/Documents/Code/GhostPalette.github.io/js/jquery-3.3.1.min.js"></script>
+    <script src="/Temp%20D%20Folder/Documents/Code/GhostPalette.github.io/js/code.js"></script>
 
   </head>
 
-  <body>
+  <body class="page--home">
     <header>
-      <div class="container">
+      <div class="container--wide">
         <!-- <div class="logo"><img src="/images/GP Logo V2 - Cropped.png"></div> -->
         <div class="logo"><img src="https://ghostpalette.github.io/images/GP%20Logo%20V2%20-%20Cropped.png"></div>
         <div class="menu">
-          <a href="# ">Work</a>
-          <a href="/#about">About</a>
-          <a href="/#contact">Contact</a>
+          <a href="#hero">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="instagram.com/ghostpalette_art"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
     </header>
 
     <main>
-      <section style="padding: 10rem 0;">
-        <h1>Coming soon!</h1>
-      </section>
-      <!-- <h1 class="title sr-only">Ghost Palette</h1>
-      <section id="hero">
+      <h1 class="title sr-only">Ghost Palette</h1>
+
+      <section id="work" class="work">
         <h2 class="title sr-only">Site Sections</h2>
-        <a href="/work/design.html">
-          <span class="label">Design</span>
+        
+        <!-- Section Panels -->
+        <button id="design" class="work--part">
+          <h3 class="label">Design</h3>
           <img src="" />
-        </a>
-        <a href="/work/websites.html">
-          <span class="label">Websites</span>
+        </button>
+        <button id="websites" class="work--part">
+          <h3 class="label">Websites</h3>
           <img src="" />
-        </a>
-        <a href="#">
-          <span class="label">Handicrafts</span>
+        </button>
+        <button id="handicrafts" class="work--part">
+          <h3 class="label">Handicrafts</h3>
           <img src="" />
-        </a>
-        <a href="#">
-          <span class="label">Illustrations</span>
+        </button>
+        <button id="illustrations" class="work--part">
+          <h3 class="label">Illustrations</h3>
           <img src="" />
-        </a>
+        </button>
+
+        <!-- Section Content -->
+        <div class="work--content">
+          <button class="work--close"><i class="fa-solid fa-xmark"></i></button>
+          <!-- Work - Design -->
+          <div class="work--popup work--design">
+            <h3 class="label">Design</h3>
+            <div class="work--list">
+              
+            </div>
+          </div>
+          <!-- Work - Websites -->
+          <div class="work--popup work--websites">
+            <h3 class="label">Websites</h3>
+            <div class="work--list">
+
+            </div>
+          </div>
+          <!-- Work - Handiwork -->
+          <div class="work--popup work--handiwork">
+            <h3 class="label">Handiwork</h3>
+            <div class="work--list">
+
+            </div>
+          </div>
+          <!-- Work - Illustrations -->
+          <div class="work--popup work--illustrations">
+            <h3 class="label">Illustrations</h3>
+            <div class="work--list">
+
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <section id="about">
@@ -64,12 +105,13 @@
         <div class="container">
           <h2>Contact</h2>
         </div>
-      </section> -->
+      </section>
+
     </main>
 
     <footer>
       <div class="container">
-
+        Copyright ©2024 GhostPalette
       </div>
     </footer>
   </body>
