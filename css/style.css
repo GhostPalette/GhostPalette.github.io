@@ -46,7 +46,8 @@ img {
 }
 
 .logo {
-  max-width: 200px;
+  width: 300px;
+  max-width: 100%;
 }
 
 button {
@@ -56,7 +57,7 @@ button {
   background: none;
   color: #ffa04e;
   border: 2px solid #ffa04e;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.5rem 3rem;
   cursor: pointer;
 }

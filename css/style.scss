@@ -108,7 +108,8 @@ img {
  max-height: 100%;
 }
 .logo {
-  max-width: 200px;
+  width: 300px;
+  max-width: 100%;
 }
 button {
   font-family: "Comfortaa", sans-serif;
@@ -118,7 +119,7 @@ button {
   background: none;
   color: $base-orange;
   border: 2px solid $base-orange;
-  border-radius: 1rem;
+  border-radius: .5rem;
   padding: .5rem 3rem;
   cursor: pointer;
 }
