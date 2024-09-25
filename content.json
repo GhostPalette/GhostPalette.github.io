@@ -5,37 +5,37 @@
       "workItems" : [
         {
           "imageName" : "design_faf",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_faf.png",
+          "imageSrc" : "design_faf.png",
           "imageCaption" : "Book Cover Design for the health help book \"Fit @ Fifty\" (2021)"
         },
         {
           "imageName" : "design_cchengtv4",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_cchengtv4.png",
+          "imageSrc" : "design_cchengtv4.png",
           "imageCaption" : "Info Banners for a Twitch video streaming channel CChengTV (2020)"
         },
         {
           "imageName" : "design_cchengtv5",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_cchengtv5.png",
+          "imageSrc" : "design_cchengtv5.png",
           "imageCaption" : "Additional Info Banners for a Twitch video streaming channel CChengTV (2020)"
         },
         {
           "imageName" : "design_visualnovel_ui",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_visualnovel_ui.png",
+          "imageSrc" : "design_visualnovel_ui.png",
           "imageCaption" : "Visual Novel UI Design (2020)"
         },
         {
           "imageName" : "design_visualnovel_ui3",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_visualnovel_ui3.png",
+          "imageSrc" : "design_visualnovel_ui3.png",
           "imageCaption" : "Additional Visual Novel UI Design (2020)"
         },
         {
           "imageName" : "design_visualnovel_ui6",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_visualnovel_ui6.png",
+          "imageSrc" : "design_visualnovel_ui6.png",
           "imageCaption" : "Additional Visual Novel UI Design (2020)"
         },
         {
           "imageName" : "design_appwireframes",
-          "imageSrc" : "https://ghostpalette.github.io/images/design/design_appwireframes.png",
+          "imageSrc" : "design_appwireframes.png",
           "imageCaption" : "App Design - Undergrad Assignment (2018)"
         }
       ]
