@@ -69,6 +69,16 @@
           "imageCaption" : ""
         }
       ]
+    },
+    {
+      "workType" : "about",
+      "workItems" : [
+        {
+          "imageName" : "",
+          "imageSrc" : "",
+          "imageCaption" : ""
+        }
+      ]
     }
   ]
 }
