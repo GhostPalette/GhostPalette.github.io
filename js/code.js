@@ -4,7 +4,7 @@ $( document ).ready(function() {
   $(document).on('click', '.buttons--panel', function(e) {
     var panel = $(this).attr('panel');
     $(this).addClass('open');
-    $('.work--content#work--' + panel).addClass('open');
+    $('.work--content[panel="' + panel + '"]').addClass('open');
   });
 
   // Click Close Button
