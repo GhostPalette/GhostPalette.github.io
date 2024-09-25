@@ -21,4 +21,8 @@ $( document ).ready(function() {
   // If height is shorter, apply vertical orientation
   // Check height again on window resizing
 
+  // For Fun:
+  // -- Spin Logo on Hover or Click
+  // -- 
+
 });

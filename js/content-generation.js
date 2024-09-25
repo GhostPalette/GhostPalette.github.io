@@ -57,12 +57,20 @@ function populateWork(work) {
     workHeaderLabel.textContent = workTypeLabel;
     const workHeaderButton = document.createElement("button");
     workHeaderButton.classList.add("button--close");
-    workHeaderButton.textContent = '<i class="fa-solid fa-xmark"></i>';
+    const workHeaderButtonIcon = document.createElement("i");
+    workHeaderButtonIcon.classList.add("fa-solid", "fa-xmark");
     // Append Work Header Content
+    workHeaderButton.appendChild(workHeaderButtonIcon);
     workHeader.appendChild(workHeaderLabel);
     workHeader.appendChild(workHeaderButton);
 
     // Populate Work Items
+    if( workContent !== null ) {
+      console.log('has work items');
+    } else {
+      console.log('no work items');
+    }
+
     for( const workItemContent of workContent ) {
       // Item Variables
       const itemName = workItemContent.imageName;
