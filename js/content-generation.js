@@ -6,29 +6,59 @@ async function populate() {
   const response = await fetch(request);
   const work = await response.json();
 
-  populateHeader(work);
-  populateWork(work);
+  // populateHeader(work);
+  // populateWork(work);
+
+  populateHeaderPanels(work);
 }
 
-// Populate Header with Button Panels
-function populateHeader(work) {
+// Populate Header with Section Panels
+function populateHeaderPanels(work) {
   // Grab Header Item
-  const headerButtonsContainer = document.querySelector("header .buttons--panels");
+  const headerPanelsContainer = document.querySelector("header .header--panels");
   // Loop Through JSON to Produce Work Button Panels
   const workItems = work.work;
   for( const workItem of workItems ) {
     // WorkType Variables
     const workType = workItem.workType;
     const workTypeLabel = workType.charAt(0).toUpperCase() + workType.slice(1);
-    const myHeaderButton = document.createElement("button");
+    const workTypeImgSrc = "https://ghostpalette.github.io/images/" + "design" + "/" + workItem.workImgSrc; // Replace "design" with variable workType
+    // Create Elements
+    const myHeaderPanel = document.createElement("div");
+    const myHeaderPanelLabel = document.createElement("label");
+    const myHeaderPanelImg = document.createElement("img");
     // Populate Button Element
-    myHeaderButton.classList.add('buttons--panel');
-    myHeaderButton.setAttribute('panel', workType);
-    myHeaderButton.textContent = workTypeLabel;
+    myHeaderPanel.classList.add('header--panel');
+    myHeaderPanel.setAttribute('panel', workType);
+    myHeaderPanelLabel.textContent = workTypeLabel;
+    myHeaderPanelImg.setAttribute('src', workTypeImgSrc);
+    // Append Panel Items
+    myHeaderPanel.appendChild(myHeaderPanelLabel);
+    myHeaderPanel.appendChild(myHeaderPanelImg);
     // Append Button to Content
-    headerButtonsContainer.appendChild(myHeaderButton);
+    headerPanelsContainer.appendChild(myHeaderPanel);
   }
 }
+
+// Populate Header with Button Panels
+// function populateHeader(work) {
+//   // Grab Header Item
+//   const headerButtonsContainer = document.querySelector("header .buttons--panels");
+//   // Loop Through JSON to Produce Work Button Panels
+//   const workItems = work.work;
+//   for( const workItem of workItems ) {
+//     // WorkType Variables
+//     const workType = workItem.workType;
+//     const workTypeLabel = workType.charAt(0).toUpperCase() + workType.slice(1);
+//     const myHeaderButton = document.createElement("button");
+//     // Populate Button Element
+//     myHeaderButton.classList.add('buttons--panel');
+//     myHeaderButton.setAttribute('panel', workType);
+//     myHeaderButton.textContent = workTypeLabel;
+//     // Append Button to Content
+//     headerButtonsContainer.appendChild(myHeaderButton);
+//   }
+// }
 
 // Populate Body With Work
 function populateWork(work) {
@@ -64,41 +94,46 @@ function populateWork(work) {
     workHeader.appendChild(workHeaderLabel);
     workHeader.appendChild(workHeaderButton);
 
-    // Populate Work Items
-    if( workContent !== null ) {
-      console.log('has work items');
+    // --- Work Items --- //
+    if( workType !== 'about' ) {
+
+      // Populate Work Items
+      for( const workItemContent of workContent ) {
+        // Item Variables
+        const itemName = workItemContent.imageName;
+        const itemSrc = "https://ghostpalette.github.io/images/" + workType + "/" + workItemContent.imageSrc;
+        const itemLabel = workItemContent.imageCaption;
+
+        // Element Variables & Populate Classes + Attributes
+        const workItemDiv = document.createElement("div");
+        workItemDiv.classList.add("work--item");
+        const workItemLightBox = document.createElement("a");
+        workItemLightBox.setAttribute("href", itemSrc);
+        workItemLightBox.setAttribute("data-lightbox", itemName);
+        workItemLightBox.setAttribute("data-title", itemLabel);
+        const workItemImage = document.createElement("img");
+        workItemImage.setAttribute("src", itemSrc);
+
+        // Nest Elements
+        workItemLightBox.appendChild(workItemImage);
+        workItemDiv.appendChild(workItemLightBox);
+        // Append Content
+        workItemsContainer.appendChild(workItemDiv);
+      }
+    
+    // --- About Section --- //
     } else {
-      console.log('no work items');
+      
+      
+
     }
-
-    for( const workItemContent of workContent ) {
-      // Item Variables
-      const itemName = workItemContent.imageName;
-      const itemSrc = "https://ghostpalette.github.io/images/" + workType + "/" + workItemContent.imageSrc;
-      const itemLabel = workItemContent.imageCaption;
-
-      // Element Variables & Populate Classes + Attributes
-      const workItemDiv = document.createElement("div");
-      workItemDiv.classList.add("work--item");
-      const workItemLightBox = document.createElement("a");
-      workItemLightBox.setAttribute("href", itemSrc);
-      workItemLightBox.setAttribute("data-lightbox", itemName);
-      workItemLightBox.setAttribute("data-title", itemLabel);
-      const workItemImage = document.createElement("img");
-      workItemImage.setAttribute("src", itemSrc);
-
-      // Nest Elements
-      workItemLightBox.appendChild(workItemImage);
-      workItemDiv.appendChild(workItemLightBox);
-      // Append Content
-      workItemsContainer.appendChild(workItemDiv);
-    }
-
+  
     // Nest Elements
     workSection.appendChild(workHeader);
     workSection.appendChild(workItemsContainer);
     // Append to Content
     main.appendChild(workSection);
+
   }
 }
 

@@ -2,6 +2,7 @@
   "work" : [
     {
       "workType" : "design",
+      "workImgSrc" : "design_cchengtv4.png",
       "workItems" : [
         {
           "imageName" : "design_faf",
@@ -42,6 +43,7 @@
     },
     {
       "workType" : "websites",
+      "workImgSrc" : "design_cchengtv4.png",
       "workItems" : [
         {
           "imageName" : "",
@@ -52,6 +54,7 @@
     },
     {
       "workType" : "handiwork",
+      "workImgSrc" : "design_cchengtv4.png",
       "workItems" : [
         {
           "imageName" : "",
@@ -62,6 +65,7 @@
     },
     {
       "workType" : "illustrations",
+      "workImgSrc" : "design_cchengtv4.png",
       "workItems" : [
         {
           "imageName" : "",
@@ -69,9 +73,9 @@
           "imageCaption" : ""
         }
       ]
-    },
-    {
-      "workType" : "about"
     }
+  ],
+  "about" : [
+
   ]
 }
