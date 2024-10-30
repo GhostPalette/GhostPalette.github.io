@@ -20,9 +20,9 @@ function populateHeaderPanels(work) {
   const workItems = work.work;
   for( const workItem of workItems ) {
     // WorkType Variables
-    const workType = workItem.workType;
+    const workType = workItem.work_type;
     const workTypeLabel = workType.charAt(0).toUpperCase() + workType.slice(1);
-    const workTypeImgSrc = "https://ghostpalette.github.io/images/" + "design" + "/" + workItem.workImgSrc; // Replace "design" with variable workType
+    const workTypeImgSrc = "https://ghostpalette.github.io/images/" + workType + "/" + workItem.work_img_src;
     // Create Elements
     const myHeaderPanel = document.createElement("button");
     const myHeaderPanelLabel = document.createElement("label");

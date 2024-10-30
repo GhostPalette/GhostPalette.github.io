@@ -245,14 +245,14 @@ header {
     
   }
   // Site Load
-  .logo button,
+  // .logo button,
   .header--panel img {
     @include pre-animation-state();
   }
   .site--load & {
-    .logo button {
-      @include animation(FadeInLogo, 1s, ease);
-    }
+    // .logo button {
+    //   @include animation(FadeInLogo, 1s, ease);
+    // }
     .header--panel {
       img {
         @include animation(FadeIn, .5s, linear);

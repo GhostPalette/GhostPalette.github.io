@@ -160,27 +160,9 @@ header .logo button {
   max-width: 100%;
   position: relative;
 }
-header .logo button,
 header .header--panel img {
   opacity: 0;
   animation-fill-mode: forwards;
-}
-.site--load header .logo button {
-  -webkit-animation-name: FadeInLogo;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-name: FadeInLogo;
-  -moz-animation-duration: 1s;
-  -moz-animation-timing-function: ease;
-  -ms-animation-name: FadeInLogo;
-  -ms-animation-duration: 1s;
-  -ms-animation-timing-function: ease;
-  -o-animation-name: FadeInLogo;
-  -o-animation-duration: 1s;
-  -o-animation-timing-function: ease;
-  animation-name: FadeInLogo;
-  animation-duration: 1s;
-  animation-timing-function: ease;
 }
 .site--load header .header--panel img {
   -webkit-animation-name: FadeIn;

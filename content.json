@@ -1,81 +1,86 @@
 {
   "work" : [
     {
-      "workType" : "design",
-      "workImgSrc" : "design_cchengtv4.png",
-      "workItems" : [
+      "work_type" : "design",
+      "work_img_src" : "design_cchengtv4.png",
+      "work_items" : [
         {
-          "imageName" : "design_faf",
-          "imageSrc" : "design_faf.png",
-          "imageCaption" : "Book Cover Design for the health help book \"Fit @ Fifty\" (2021)"
+          "image_name" : "design_faf",
+          "image_src" : "design_faf.png",
+          "image_caption" : "Book Cover Design for the health help book \"Fit @ Fifty\" (2021)"
         },
         {
-          "imageName" : "design_cchengtv4",
-          "imageSrc" : "design_cchengtv4.png",
-          "imageCaption" : "Info Banners for a Twitch video streaming channel CChengTV (2020)"
+          "image_name" : "design_cchengtv4",
+          "image_src" : "design_cchengtv4.png",
+          "image_caption" : "Info Banners for a Twitch video streaming channel CChengTV (2020)"
         },
         {
-          "imageName" : "design_cchengtv5",
-          "imageSrc" : "design_cchengtv5.png",
-          "imageCaption" : "Additional Info Banners for a Twitch video streaming channel CChengTV (2020)"
+          "image_name" : "design_cchengtv5",
+          "image_src" : "design_cchengtv5.png",
+          "image_caption" : "Additional Info Banners for a Twitch video streaming channel CChengTV (2020)"
         },
         {
-          "imageName" : "design_visualnovel_ui",
-          "imageSrc" : "design_visualnovel_ui.png",
-          "imageCaption" : "Visual Novel UI Design (2020)"
+          "image_name" : "design_visualnovel_ui",
+          "image_src" : "design_visualnovel_ui.png",
+          "image_caption" : "Visual Novel UI Design (2020)"
         },
         {
-          "imageName" : "design_visualnovel_ui3",
-          "imageSrc" : "design_visualnovel_ui3.png",
-          "imageCaption" : "Additional Visual Novel UI Design (2020)"
+          "image_name" : "design_visualnovel_ui3",
+          "image_src" : "design_visualnovel_ui3.png",
+          "image_caption" : "Additional Visual Novel UI Design (2020)"
         },
         {
-          "imageName" : "design_visualnovel_ui6",
-          "imageSrc" : "design_visualnovel_ui6.png",
-          "imageCaption" : "Additional Visual Novel UI Design (2020)"
+          "image_name" : "design_visualnovel_ui6",
+          "image_src" : "design_visualnovel_ui6.png",
+          "image_caption" : "Additional Visual Novel UI Design (2020)"
         },
         {
-          "imageName" : "design_appwireframes",
-          "imageSrc" : "design_appwireframes.png",
-          "imageCaption" : "App Design - Undergrad Assignment (2018)"
+          "image_name" : "design_appwireframes",
+          "image_src" : "design_appwireframes.png",
+          "image_caption" : "App Design - Undergrad Assignment (2018)"
         }
       ]
     },
     {
-      "workType" : "websites",
-      "workImgSrc" : "websites_pleroma2.png",
-      "workItems" : [
+      "work_type" : "websites",
+      "work_img_src" : "websites_pleroma2.png",
+      "work_items" : [
         {
-          "imageName" : "",
-          "imageSrc" : "",
-          "imageCaption" : ""
+          "image_name" : "",
+          "image_src" : "",
+          "image_caption" : ""
         }
       ]
     },
     {
-      "workType" : "handiwork",
-      "workImgSrc" : "handiwork_flowers2.png",
-      "workItems" : [
+      "work_type" : "handiwork",
+      "work_img_src" : "handiwork_flowers2.jpg",
+      "work_items" : [
         {
-          "imageName" : "",
-          "imageSrc" : "",
-          "imageCaption" : ""
+          "image_name" : "",
+          "image_src" : "",
+          "image_caption" : ""
         }
       ]
     },
     {
-      "workType" : "illustrations",
-      "workImgSrc" : "illustration_panda.png",
-      "workItems" : [
+      "work_type" : "illustrations",
+      "work_img_src" : "illustration_panda.png",
+      "work_items" : [
         {
-          "imageName" : "",
-          "imageSrc" : "",
-          "imageCaption" : ""
+          "image_name" : "",
+          "image_src" : "",
+          "image_caption" : ""
         }
       ]
     }
   ],
-  "about" : [
-
+  "pages" : [
+    {
+      "page_name" : "About"
+    },
+    {
+      "page_name" : "Contact"
+    }
   ]
 }
