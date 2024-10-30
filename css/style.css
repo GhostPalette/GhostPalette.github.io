@@ -1,3 +1,29 @@
+header .header--panel:before, header .header--panel:after,
+header .header--panels,
+header .header--panels img, header {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+@keyframes FadeInLogo {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .sr-only {
   display: none;
 }
@@ -9,19 +35,6 @@ h3 {
 img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.logo {
-  width: 250px;
-  max-width: 100%;
-  position: relative;
-  scale: 1.5;
-  opacity: 0;
-  transition: scale 1s, opacity 0.75s;
-}
-.site--load .logo {
-  opacity: 1;
-  scale: 1;
 }
 
 button {
@@ -70,6 +83,134 @@ body {
 
 main {
   position: relative;
+}
+
+header {
+  position: fixed;
+}
+header,
+header .header--panels,
+header .header--panels img {
+  position: absolute;
+}
+header .header--panels {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+body[layout=horizontal] header .header--panels {
+  grid-template-columns: repeat(1, 1fr);
+}
+body[layout=vertical] header .header--panels {
+  grid-template-columns: repeat(4, 1fr);
+}
+header .header--panel label {
+  opacity: 0;
+  transition: 0.2s linear opacity;
+}
+header .header--panel img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+}
+header .header--panel label {
+  position: relative;
+  color: white;
+  z-index: 4;
+}
+header .header--panel:before, header .header--panel:after {
+  content: "";
+  position: absolute;
+}
+header .header--panel:before {
+  z-index: 1;
+}
+header .header--panel:after {
+  opacity: 0;
+  z-index: 3;
+  transition: 0.15s linear opacity;
+}
+header .header--panel:nth-of-type(odd):before, header .header--panel:nth-of-type(odd):after {
+  background-color: #ffa04e;
+}
+header .header--panel:nth-of-type(even):before, header .header--panel:nth-of-type(even):after {
+  background-color: #FF93B3;
+}
+body[layout=normal] header .header--panel:nth-of-type(1):before, body[layout=normal] header .header--panel:nth-of-type(1):after, body[layout=normal] header .header--panel:nth-of-type(4):before, body[layout=normal] header .header--panel:nth-of-type(4):after {
+  background-color: #ffa04e;
+}
+body[layout=normal] header .header--panel:nth-of-type(2):before, body[layout=normal] header .header--panel:nth-of-type(2):after, body[layout=normal] header .header--panel:nth-of-type(3):before, body[layout=normal] header .header--panel:nth-of-type(3):after {
+  background-color: #FF93B3;
+}
+header .header--panel:hover label {
+  opacity: 1;
+}
+header .header--panel:hover:after {
+  opacity: 0.9;
+}
+header .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+header .logo button {
+  width: 250px;
+  max-width: 100%;
+  position: relative;
+}
+header .logo button,
+header .header--panel img {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+.site--load header .logo button {
+  -webkit-animation-name: FadeInLogo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: FadeInLogo;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease;
+  -ms-animation-name: FadeInLogo;
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: ease;
+  -o-animation-name: FadeInLogo;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease;
+  animation-name: FadeInLogo;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+.site--load header .header--panel img {
+  -webkit-animation-name: FadeIn;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: FadeIn;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: FadeIn;
+  -ms-animation-duration: 0.5s;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: FadeIn;
+  -o-animation-duration: 0.5s;
+  -o-animation-timing-function: linear;
+  animation-name: FadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+.site--load header .header--panel:nth-of-type(1) img {
+  animation-delay: 0.825s;
+}
+.site--load header .header--panel:nth-of-type(2) img {
+  animation-delay: 0.9s;
+}
+.site--load header .header--panel:nth-of-type(3) img {
+  animation-delay: 0.975s;
+}
+.site--load header .header--panel:nth-of-type(4) img {
+  animation-delay: 1.05s;
 }
 
 section {

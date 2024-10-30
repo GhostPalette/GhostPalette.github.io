@@ -1,4 +1,4 @@
-// Variables
+// ----- Variables ----- //
 $base-orange: #ffa04e;
 $base-pink: #FF93B3;
 $base-sage: #146551;
@@ -11,7 +11,15 @@ $orange-2: #fffaf5;
 $pink-2: #fdbace;
 $pink-3: #fbd9e3;
 
-// Animations -- Mixins
+%position-fill {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+// ----- Mixins ----- //
+// Animations
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;
@@ -50,17 +58,32 @@ $pink-3: #fbd9e3;
   animation-duration: $duration;
   animation-timing-function: $function;
 }
+@mixin pre-animation-state {
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 // Animations -- Keyframes
-// @include keyframes(wiper) {
-//   0% {
-//     bottom: -50%;
-//   }
-//   100% {
-//     bottom: 100%;
-//   }
-// }
+@include keyframes(FadeInLogo) {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@include keyframes(FadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-// Components
+// ----- Components ----- //
 .sr-only {
   display: none;
 }
@@ -70,19 +93,6 @@ h3 {
 img {
   max-width: 100%;
   max-height: 100%;
-}
-.logo {
-  width: 250px;
-  max-width: 100%;
-  position: relative;
-  // z-index: 10;
-  scale: 1.5;
-  opacity: 0;
-  transition: scale 1s, opacity .75s;
-  .site--load & {
-    opacity: 1;
-    scale: 1;
-  }
 }
 button {
   position: relative;
@@ -99,7 +109,7 @@ button {
   overflow: hidden;
 }
 
-// Animations
+// ----- Animations ----- //
 .animation {
   &--fade-in {
     position: fixed;
@@ -118,7 +128,7 @@ button {
   }
 }
 
-// Layout
+// ----- Layout ----- //
 body {
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
@@ -137,80 +147,127 @@ main {
   position: relative;
 }
 header {
-
+  position: fixed;
+  @extend %position-fill;
+  &,
+  .header--panels,
+  .header--panels img {
+    position: absolute;
+    @extend %position-fill;
+  }
+  // Header Panels
+  .header {
+    &--panels {
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      body[layout=horizontal] & {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      body[layout=vertical] & {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    &--panel {
+      label {
+        opacity: 0;
+        transition: 0.2s linear opacity;
+      }
+      img {
+        object-fit: cover;
+        z-index: 2;
+      }
+      label {
+        position: relative;
+        color: white;
+        z-index: 4;
+      }
+      &:before, // Site Load Animation
+      &:after { // Hover Animation
+        content: '';
+        position: absolute;
+        @extend %position-fill;
+      }
+      &:before {
+        z-index: 1;
+      }
+      &:after {
+        opacity: 0;
+        z-index: 3;
+        transition: 0.15s linear opacity;
+      }
+      &:nth-of-type(odd) {
+        &:before, &:after {
+          background-color: $base-orange;
+        }
+      }
+      &:nth-of-type(even) {
+        &:before, &:after {
+          background-color: $base-pink;
+        }
+      }
+      body[layout=normal] & {
+        &:nth-of-type(1),
+        &:nth-of-type(4) {
+          &:before, &:after {
+            background-color: $base-orange;
+          }
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+          &:before, &:after {
+            background-color: $base-pink;
+          }
+        }
+      }
+      &:hover {
+        label {
+          opacity: 1;
+        }
+        &:after {
+          opacity: .9;
+        }
+      }
+    }
+  }
+  // Logo
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    button {
+      width: 250px;
+      max-width: 100%;
+      position: relative;
+    }
+    
+  }
+  // Site Load
+  .logo button,
+  .header--panel img {
+    @include pre-animation-state();
+  }
+  .site--load & {
+    .logo button {
+      @include animation(FadeInLogo, 1s, ease);
+    }
+    .header--panel {
+      img {
+        @include animation(FadeIn, .5s, linear);
+        animation-delay: 1s;
+      }
+      @for $i from 1 to 5 {
+        &:nth-of-type(#{$i}) img {
+          animation-delay: calc( ($i * 0.075s) + .75s );
+        }
+      }
+    }
+  }
 }
 
-
-// header {
-  // position: relative;
-  // height: 100vh;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // display: none;
-  // .buttons {
-    // &--panels {
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-    //   width: 100%;
-    //   display: flex;
-    //   justify-content: center;
-      // transition: 0.5s ease transform;
-    //   top: 0;
-    //   left: 0;
-    //   transform: rotate(90deg);
-    //   transform-origin: bottom left;
-      // &--add {
-      //   color: $base-orange;
-      // }
-    // }
-    // &--panel {
-    //   background-color: $base-orange;
-    //   color: white;
-    //   padding: .5rem 1rem 3rem;
-    //   transform: translate(0, 2.5rem);
-    //   transition: 0.5s ease transform;
-    //   margin: 0 .15rem;
-    //   &:hover {
-    //     transform: translate(0, 2rem);
-    //   }
-    //   &.open {
-    //     transform: translate(0, calc(-100vh + 2rem) );
-    //   }
-    // }
-    // &--vertical {
-    //   transform: none;
-    //   transition: none;
-    //   top: 2rem;
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: flex-start;
-    //   .buttons--panel {
-    //     padding: .5rem 1rem;
-    //     margin-bottom: .25rem;
-    //     transform: none;
-    //     transition: 0.5s ease padding;
-    //     &:hover {
-    //       transform: none;
-    //       padding-left: 1.5rem;
-    //     }
-    //   }
-    // }
-  // }
-// }
-// footer {
-//   position: fixed;
-//   bottom: 0;
-//   background-color: $base-orange;
-//   color: white;
-//   text-align: center;
-//   padding: .5rem;
-//   // z-index: 10;
-// }
-
-// Sections
+// ----- Sections ----- //
 section {
   position: relative;
   background: $orange-2;

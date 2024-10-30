@@ -24,7 +24,7 @@ function populateHeaderPanels(work) {
     const workTypeLabel = workType.charAt(0).toUpperCase() + workType.slice(1);
     const workTypeImgSrc = "https://ghostpalette.github.io/images/" + "design" + "/" + workItem.workImgSrc; // Replace "design" with variable workType
     // Create Elements
-    const myHeaderPanel = document.createElement("div");
+    const myHeaderPanel = document.createElement("button");
     const myHeaderPanelLabel = document.createElement("label");
     const myHeaderPanelImg = document.createElement("img");
     // Populate Button Element
