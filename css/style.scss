@@ -103,7 +103,6 @@ button {
   color: $base-orange;
   font-family: "Comfortaa", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -145,8 +144,10 @@ body {
 }
 main {
   position: relative;
+  z-index: 5;
 }
 header {
+  z-index: 1;
   &,
   .header--panels img {
     position: absolute;
@@ -171,8 +172,10 @@ header {
     }
     &--panel {
       label {
+        font-size: 2rem;
         opacity: 0;
         transition: 0.2s linear opacity;
+        cursor: pointer;
       }
       img {
         object-fit: cover;
@@ -272,14 +275,36 @@ footer {
   position: absolute;
   right: 0;
   bottom: 0;
-  z-index: 2;
-  margin-bottom: .5rem;
-  margin-right: .5rem;
+  z-index: 3;
+  max-width: 100%;
+
+  &, .footer--menu {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  button {
+    background: $base-orange;
+    color: white;
+    padding: .5rem;
+    margin-right: .5rem;
+    border: 2px solid white;
+    border-bottom: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
   .footer {
     &--open {
       // background: $base-orange;
       // color: white;
       // padding: 1rem;
+    }
+    &--button {
+      transition: .15s linear padding;
+      &:hover {
+        padding-bottom: 1rem;
+      }
     }
   }
 }
@@ -287,7 +312,7 @@ footer {
 // ----- Sections ----- //
 section {
   position: relative;
-  background: $orange-2;
+  background-color: white;
   &:before {
     content: '';
     position: absolute;
@@ -298,8 +323,7 @@ section {
     background-color: $base-orange;
   }
 }
-// Work Sections
-.work {
+.item {
   &--content {
     display: flex;
     flex-direction: column;
@@ -333,6 +357,9 @@ section {
       background-color: $base-orange;
     }
   }
+}
+// Work Sections
+.work {
   &--list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

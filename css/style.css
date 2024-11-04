@@ -45,7 +45,6 @@ button {
   color: #ffa04e;
   font-family: "Comfortaa", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -81,8 +80,12 @@ body {
 
 main {
   position: relative;
+  z-index: 5;
 }
 
+header {
+  z-index: 1;
+}
 header,
 header .header--panels img {
   position: absolute;
@@ -103,8 +106,10 @@ body[layout=vertical] header .header--panels {
   grid-template-columns: repeat(4, 1fr);
 }
 header .header--panel label {
+  font-size: 2rem;
   opacity: 0;
   transition: 0.2s linear opacity;
+  cursor: pointer;
 }
 header .header--panel img {
   -o-object-fit: cover;
@@ -198,13 +203,33 @@ footer {
   position: absolute;
   right: 0;
   bottom: 0;
-  z-index: 2;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
+  z-index: 3;
+  max-width: 100%;
 }
+footer, footer .footer--menu {
+  display: flex;
+  align-items: flex-end;
+}
+footer button {
+  background: #ffa04e;
+  color: white;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: 2px solid white;
+  border-bottom: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+footer .footer--button {
+  transition: 0.15s linear padding;
+}
+footer .footer--button:hover {
+  padding-bottom: 1rem;
+}
+
 section {
   position: relative;
-  background: #fffaf5;
+  background-color: white;
 }
 section:before {
   content: "";
@@ -216,7 +241,7 @@ section:before {
   background-color: #ffa04e;
 }
 
-.work--content {
+.item--content {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -226,26 +251,27 @@ section:before {
   height: 100vh;
   transition: 0.5s ease top;
 }
-.work--content.open {
+.item--content.open {
   top: 0;
 }
-.work--header {
+.item--header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
 }
-.work--header .label {
+.item--header .label {
   margin: 0;
   padding: 2rem 0 1rem;
 }
-.work--header .button--close {
+.item--header .button--close {
   margin-top: 1rem;
   width: 1.5rem;
   height: 1.5rem;
   color: #ffa04e;
   background-color: #ffa04e;
 }
+
 .work--list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
