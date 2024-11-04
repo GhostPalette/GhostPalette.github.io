@@ -77,10 +77,10 @@
   ],
   "pages" : [
     {
-      "page_name" : "About"
+      "page_name" : "about"
     },
     {
-      "page_name" : "Contact"
+      "page_name" : "contact"
     }
   ]
 }
