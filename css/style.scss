@@ -137,7 +137,7 @@ body {
 
   color: black;
   margin: 0;
-  background-color: $orange-2;
+  // background-color: $orange-2;
 
   width: 100vw;
   height: 100vh;
@@ -147,10 +147,7 @@ main {
   position: relative;
 }
 header {
-  position: fixed;
-  @extend %position-fill;
   &,
-  .header--panels,
   .header--panels img {
     position: absolute;
     @extend %position-fill;
@@ -158,9 +155,13 @@ header {
   // Header Panels
   .header {
     &--panels {
-      position: absolute;
       display: grid;
+      grid-gap: .5rem;
       grid-template-columns: repeat(2, 1fr);
+      padding: .5rem;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
       body[layout=horizontal] & {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -237,12 +238,12 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    border-radius: 50%;
     button {
       width: 250px;
       max-width: 100%;
       position: relative;
     }
-    
   }
   // Site Load
   // .logo button,
@@ -263,6 +264,22 @@ header {
           animation-delay: calc( ($i * 0.075s) + .75s );
         }
       }
+    }
+  }
+}
+// Footer
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+  .footer {
+    &--open {
+      // background: $base-orange;
+      // color: white;
+      // padding: 1rem;
     }
   }
 }

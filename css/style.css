@@ -1,6 +1,5 @@
-header .header--panel:before, header .header--panel:after,
-header .header--panels,
-header .header--panels img, header {
+header .header--panel:before, header .header--panel:after, header,
+header .header--panels img {
   height: 100%;
   width: 100%;
   top: 0;
@@ -75,7 +74,6 @@ body {
   font-style: normal;
   color: black;
   margin: 0;
-  background-color: #fffaf5;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -85,18 +83,18 @@ main {
   position: relative;
 }
 
-header {
-  position: fixed;
-}
 header,
-header .header--panels,
 header .header--panels img {
   position: absolute;
 }
 header .header--panels {
-  position: absolute;
   display: grid;
+  grid-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 body[layout=horizontal] header .header--panels {
   grid-template-columns: repeat(1, 1fr);
@@ -154,6 +152,7 @@ header .logo {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  border-radius: 50%;
 }
 header .logo button {
   width: 250px;
@@ -195,6 +194,14 @@ header .header--panel img {
   animation-delay: 1.05s;
 }
 
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
 section {
   position: relative;
   background: #fffaf5;
