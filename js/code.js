@@ -1,5 +1,8 @@
 $( document ).ready(function() {
 
+  // --- Variables
+  var header = $('header');
+
   // --- Calculate Screen Proportions
   function calculate_screen_proportions() {
     var body = $('body');
@@ -20,18 +23,37 @@ $( document ).ready(function() {
     calculate_screen_proportions();
   })
 
-  // --- Click Panel Button
-  $(document).on('click', '.header--panel, .footer--menu .footer--button', function(e) {
+  // --- Click Work Button
+  $(document).on('click', '.header--panel', function(e) {
     var panel = $(this).attr('panel');
-    if( !panel ) panel = $(this).attr('page');
-    $('.item--content[panel="' + panel + '"]').addClass('open');
+    click_panel_button(panel);
+    header.addClass('close');
   });
 
-  // --- Click Close Button
-  $(document).on('click', '.button--close', function(e) {
-    // var panel = $(this).closest('.item--content').attr('panel');
-    $(this).closest('.item--content').removeClass('open');
+  // --- Click Page Button
+  $(document).on('click', '.footer--menu .footer--button', function(e) {
+    var panel = $(this).attr('page');
+    click_panel_button(panel);
   });
+
+  // --- Click Close Buttons
+  $(document).on('click', '.item--content .item--header .button--close', function(e) {
+    close_panel_button();
+  });
+
+  // --- Click Panel Button Functions
+  function click_panel_button(panel) {
+    // Clear Opens
+    close_panel_button();
+    // Apply Opens
+    $('.item--content[panel="' + panel + '"]').parent().addClass('open');
+    $('.item--content[panel="' + panel + '"]').addClass('open');
+  }
+  function close_panel_button() {
+    $('.item--content').removeClass('open');
+    $('.main--work, .main--pages').removeClass('open');
+    header.removeClass('close');
+  }
 
 
   // TODO:

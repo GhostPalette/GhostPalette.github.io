@@ -18,70 +18,8 @@ $pink-3: #fbd9e3;
   left: 0;
 }
 
-// ----- Mixins ----- //
-// Animations
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @-o-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
-}
-@mixin animation($name, $duration, $function) {
-  -webkit-animation-name: $name;
-  -webkit-animation-duration: $duration;
-  -webkit-animation-timing-function: $function;
-
-  -moz-animation-name: $name;
-  -moz-animation-duration: $duration;
-  -moz-animation-timing-function: $function;
-
-  -ms-animation-name: $name;
-  -ms-animation-duration: $duration;
-  -ms-animation-timing-function: $function;
-
-  -o-animation-name: $name;
-  -o-animation-duration: $duration;
-  -o-animation-timing-function: $function;
-
-  animation-name: $name;
-  animation-duration: $duration;
-  animation-timing-function: $function;
-}
-@mixin pre-animation-state {
-  opacity: 0;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-// Animations -- Keyframes
-@include keyframes(FadeInLogo) {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@include keyframes(FadeIn) {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// ----- Mixins & Animations ----- //
+@import "_mixins";
 
 // ----- Components ----- //
 .sr-only {
@@ -142,18 +80,54 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-main {
-  position: relative;
-  z-index: 5;
-}
 header {
+  z-index: 2;
+  // Position
+  position: absolute;
+  @extend %position-fill;
+}
+.main--work,
+.main--pages {
+  // Position
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.main--work {
   z-index: 1;
-  &,
-  .header--panels img {
-    position: absolute;
-    @extend %position-fill;
+  height: 100%;
+}
+.main--pages {
+  z-index: 3;
+}
+footer {
+  z-index: 4;
+  // Position
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  max-width: 100%;
+}
+
+// ----- Header & Footer Content ----- //
+header {
+  background-color: white;
+
+  body[layout=horizontal] & {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1rem;
+      background: orange;
+      top: 0;
+      left: 0;
+      z-index: 8;
+    }
   }
-  // Header Panels
+
   .header {
     &--panels {
       display: grid;
@@ -178,6 +152,8 @@ header {
         cursor: pointer;
       }
       img {
+        position: absolute;
+        @extend %position-fill;
         object-fit: cover;
         z-index: 2;
       }
@@ -201,25 +177,29 @@ header {
         transition: 0.15s linear opacity;
       }
       &:nth-of-type(odd) {
-        &:before, &:after {
+        // &:before,
+        &:after {
           background-color: $base-orange;
         }
       }
       &:nth-of-type(even) {
-        &:before, &:after {
+        // &:before,
+        &:after {
           background-color: $base-pink;
         }
       }
       body[layout=normal] & {
         &:nth-of-type(1),
         &:nth-of-type(4) {
-          &:before, &:after {
+          // &:before,
+          &:after {
             background-color: $base-orange;
           }
         }
         &:nth-of-type(2),
         &:nth-of-type(3) {
-          &:before, &:after {
+          // &:before,
+          &:after {
             background-color: $base-pink;
           }
         }
@@ -241,22 +221,36 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    width: 225px;
+    max-width: 30%;
     border-radius: 50%;
-    button {
-      width: 250px;
-      max-width: 100%;
-      position: relative;
+    background: white;
+    padding: 12px 9px 0;
+    transition: 0.15s linear transform;
+
+    body[layout=vertical] & {
+      top: 1rem;
+      transform: translate(-50%, 0);
+      max-width: 12%;
+      padding: 6px 5px 0;
+    }
+    body[layout=horizontal] & {
+      left: -.5rem;
+      top: -.5rem;
+      transform: none;
+      border-radius: 0 50% 50% 50%;
     }
   }
   // Site Load
-  // .logo button,
+  & .logo img,
   .header--panel img {
-    @include pre-animation-state();
+    @include pre-animation-state-o();
   }
   .site--load & {
-    // .logo button {
-    //   @include animation(FadeInLogo, 1s, ease);
-    // }
+    .logo img {
+      @include animation(FadeInLogo, 1s, ease);
+      animation-delay: .25s;
+    }
     .header--panel {
       img {
         @include animation(FadeIn, .5s, linear);
@@ -269,20 +263,68 @@ header {
       }
     }
   }
+  // Close --> Open Panel
+  & {
+    transition: 0.5s ease background-color;
+  }
+  .logo {
+    transition: 0.3s ease opacity;
+  }
+  .header--panel {
+    transition: 0.5s ease transform, 0.4s ease opacity;
+  }
+  &.close {
+    pointer-events: none;
+    background-color: transparent;
+    .logo {
+      opacity: 0;
+    }
+    .header--panel {
+      opacity: 0;
+      &:nth-of-type(1) {
+        transform: translate(-50%, -50%);
+        transition-delay: 0.05s;
+      }
+      &:nth-of-type(2) {
+        transform: translate(50%, -50%);
+        transition-delay: 0.1s;
+      }
+      &:nth-of-type(3) {
+        transform: translate(-50%, 50%);
+        transition-delay: 0.15s;
+      }
+      &:nth-of-type(4) {
+        transform: translate(50%, 50%);
+        transition-delay: 0.2s;
+      }
+      body[layout=vertical] & {
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+          transform: translate(0, -50%);
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(4) {
+          transform: translate(0, 50%);
+        }
+      }
+      body[layout=horizontal] & {
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+          transform: translate(-50%, 0);
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(4) {
+          transform: translate(50%, 0);
+        }
+      }
+    }
+  }
 }
-// Footer
 footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  max-width: 100%;
-
   &, .footer--menu {
     display: flex;
     align-items: flex-end;
   }
-  
   button {
     background: $base-orange;
     color: white;
@@ -292,8 +334,7 @@ footer {
     border-bottom: none;
     font-size: 1rem;
     text-transform: uppercase;
-  }
-
+  }  
   .footer {
     &--open {
       // background: $base-orange;
@@ -328,22 +369,8 @@ section {
   }
 }
 .item {
-  &--content {
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-    left: 0;
-    bottom: -100%;
-    width: 100vw;
-    // height: 100%;
-    transition: 0.5s ease bottom;
-
-    &.open {
-    bottom: 0;
-    }
-  }
   &--header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -359,17 +386,39 @@ section {
       color: $base-orange;
       background-color: $base-orange;
     }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      width: calc(100% - 4rem);
+      height: 2px;
+      background-color: $base-orange-lt;
+    }
   }
 }
 // Work Sections
+.main--work .item--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &.open {
+    z-index: 3;
+  }
+}
 .work {
   &--list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
-    // overflow-y: scroll;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
+    flex: 1;
   }
   &--item {
     position: relative;
@@ -381,8 +430,37 @@ section {
       transform: translate(-50%, -50%);
       max-width: calc(100% - 1rem);
       max-height: calc(100% - 1rem);
-      border: .5rem solid $base-orange;
-      border-radius: .5rem;
+      border: 2px solid $base-orange;
+    }
+  }
+}
+// Page Sections {
+.main--pages {
+  &:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: black;
+    opacity: 0;
+    transition: .15s linear opacity;
+    pointer-events: none;
+  }
+  &.open {
+    &:before {
+      opacity: .5;
+      pointer-events: initial;
+    }
+  }
+  .item--content {
+    position: absolute;
+    top: 0;
+    transition: .15s linear transform;
+    width: 100%;
+    &.open {
+      transform: translate(0, -100%);
     }
   }
 }

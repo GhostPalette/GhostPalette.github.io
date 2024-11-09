@@ -68,9 +68,6 @@ function populate_content(content) {
   // ----- WORK ----- //
   // Work Content
   const work_items = content.work;
-  // Work Content Element
-  const work_content_container = document.createElement("div");
-  work_content_container.classList.add('content--work');
   // Loop Through JSON to Product Panels with Work
   for( const work_item of work_items ) {
     // Work Variables
@@ -111,17 +108,14 @@ function populate_content(content) {
     // Nest Work Items
     work_section.appendChild(work_items_container);
     // Append to Section to Content
-    work_content_container.appendChild(work_section);
+    main.appendChild(work_section);
   }
-  // Append Work to Main
-  main.appendChild(work_content_container);
 
   // ----- PAGES ----- //
   // Page Content
   const pages = content.pages;
   // Page Content Element
-  const page_content_container = document.createElement("div");
-  page_content_container.classList.add('content--page');
+  const pages_div = document.querySelector("div.main--pages");
   // Loop Through JSON to Product Panels with Work
   for( const page of pages ) {
     // Page Variables
@@ -139,10 +133,8 @@ function populate_content(content) {
     // Nest Page Items
     page_section.appendChild(page_content_div);
     // Append to Section to Content
-    page_content_container.appendChild(page_section);
+    pages_div.appendChild(page_section);
   }
-  // Append Pages to Main
-  main.appendChild(page_content_container);
 
   // ----- Functions ----- //
   function create_section_and_header( section_name ) {

@@ -1,5 +1,4 @@
-header .header--panel:before, header .header--panel:after, header,
-header .header--panels img {
+header .header--panel:before, header .header--panel:after, header .header--panel img, header {
   height: 100%;
   width: 100%;
   top: 0;
@@ -21,6 +20,14 @@ header .header--panels img {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .sr-only {
@@ -78,17 +85,49 @@ body {
   overflow: hidden;
 }
 
-main {
-  position: relative;
-  z-index: 5;
+header {
+  z-index: 2;
+  position: absolute;
+}
+
+.main--work,
+.main--pages {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.main--work {
+  z-index: 1;
+  height: 100%;
+}
+
+.main--pages {
+  z-index: 3;
+}
+
+footer {
+  z-index: 4;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  max-width: 100%;
 }
 
 header {
-  z-index: 1;
+  background-color: white;
 }
-header,
-header .header--panels img {
+body[layout=horizontal] header:before {
+  content: "";
   position: absolute;
+  width: 100%;
+  height: 1rem;
+  background: orange;
+  top: 0;
+  left: 0;
+  z-index: 8;
 }
 header .header--panels {
   display: grid;
@@ -112,6 +151,7 @@ header .header--panel label {
   cursor: pointer;
 }
 header .header--panel img {
+  position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 2;
@@ -133,16 +173,16 @@ header .header--panel:after {
   z-index: 3;
   transition: 0.15s linear opacity;
 }
-header .header--panel:nth-of-type(odd):before, header .header--panel:nth-of-type(odd):after {
+header .header--panel:nth-of-type(odd):after {
   background-color: #ffa04e;
 }
-header .header--panel:nth-of-type(even):before, header .header--panel:nth-of-type(even):after {
+header .header--panel:nth-of-type(even):after {
   background-color: #FF93B3;
 }
-body[layout=normal] header .header--panel:nth-of-type(1):before, body[layout=normal] header .header--panel:nth-of-type(1):after, body[layout=normal] header .header--panel:nth-of-type(4):before, body[layout=normal] header .header--panel:nth-of-type(4):after {
+body[layout=normal] header .header--panel:nth-of-type(1):after, body[layout=normal] header .header--panel:nth-of-type(4):after {
   background-color: #ffa04e;
 }
-body[layout=normal] header .header--panel:nth-of-type(2):before, body[layout=normal] header .header--panel:nth-of-type(2):after, body[layout=normal] header .header--panel:nth-of-type(3):before, body[layout=normal] header .header--panel:nth-of-type(3):after {
+body[layout=normal] header .header--panel:nth-of-type(2):after, body[layout=normal] header .header--panel:nth-of-type(3):after {
   background-color: #FF93B3;
 }
 header .header--panel:hover label {
@@ -157,16 +197,47 @@ header .logo {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  width: 225px;
+  max-width: 30%;
   border-radius: 50%;
+  background: white;
+  padding: 12px 9px 0;
+  transition: 0.15s linear transform;
 }
-header .logo button {
-  width: 250px;
-  max-width: 100%;
-  position: relative;
+body[layout=vertical] header .logo {
+  top: 1rem;
+  transform: translate(-50%, 0);
+  max-width: 12%;
+  padding: 6px 5px 0;
 }
+body[layout=horizontal] header .logo {
+  left: -0.5rem;
+  top: -0.5rem;
+  transform: none;
+  border-radius: 0 50% 50% 50%;
+}
+header .logo img,
 header .header--panel img {
   opacity: 0;
   animation-fill-mode: forwards;
+}
+.site--load header .logo img {
+  -webkit-animation-name: FadeInLogo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: FadeInLogo;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease;
+  -ms-animation-name: FadeInLogo;
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: ease;
+  -o-animation-name: FadeInLogo;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease;
+  animation-name: FadeInLogo;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0.25s;
 }
 .site--load header .header--panel img {
   -webkit-animation-name: FadeIn;
@@ -198,14 +269,54 @@ header .header--panel img {
 .site--load header .header--panel:nth-of-type(4) img {
   animation-delay: 1.05s;
 }
-
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  max-width: 100%;
+header {
+  transition: 0.5s ease background-color;
 }
+header .logo {
+  transition: 0.3s ease opacity;
+}
+header .header--panel {
+  transition: 0.5s ease transform, 0.4s ease opacity;
+}
+header.close {
+  pointer-events: none;
+  background-color: transparent;
+}
+header.close .logo {
+  opacity: 0;
+}
+header.close .header--panel {
+  opacity: 0;
+}
+header.close .header--panel:nth-of-type(1) {
+  transform: translate(-50%, -50%);
+  transition-delay: 0.05s;
+}
+header.close .header--panel:nth-of-type(2) {
+  transform: translate(50%, -50%);
+  transition-delay: 0.1s;
+}
+header.close .header--panel:nth-of-type(3) {
+  transform: translate(-50%, 50%);
+  transition-delay: 0.15s;
+}
+header.close .header--panel:nth-of-type(4) {
+  transform: translate(50%, 50%);
+  transition-delay: 0.2s;
+}
+body[layout=vertical] header.close .header--panel:nth-of-type(1), body[layout=vertical] header.close .header--panel:nth-of-type(3) {
+  transform: translate(0, -50%);
+}
+body[layout=vertical] header.close .header--panel:nth-of-type(2), body[layout=vertical] header.close .header--panel:nth-of-type(4) {
+  transform: translate(0, 50%);
+}
+body[layout=horizontal] header.close .header--panel:nth-of-type(1), body[layout=horizontal] header.close .header--panel:nth-of-type(3) {
+  transform: translate(-50%, 0);
+}
+body[layout=horizontal] header.close .header--panel:nth-of-type(2), body[layout=horizontal] header.close .header--panel:nth-of-type(4) {
+  transform: translate(50%, 0);
+}
+
 footer, footer .footer--menu {
   display: flex;
   align-items: flex-end;
@@ -245,19 +356,8 @@ section .page--content {
   padding: 2rem;
 }
 
-.item--content {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  bottom: -100%;
-  width: 100vw;
-  transition: 0.5s ease bottom;
-}
-.item--content.open {
-  bottom: 0;
-}
 .item--header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -274,6 +374,28 @@ section .page--content {
   color: #ffa04e;
   background-color: #ffa04e;
 }
+.item--header:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  width: calc(100% - 4rem);
+  height: 2px;
+  background-color: #FFEEDB;
+}
+
+.main--work .item--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main--work .item--content.open {
+  z-index: 3;
+}
 
 .work--list {
   display: grid;
@@ -281,6 +403,8 @@ section .page--content {
   grid-gap: 2rem;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
+  flex: 1;
 }
 .work--item {
   position: relative;
@@ -293,8 +417,33 @@ section .page--content {
   transform: translate(-50%, -50%);
   max-width: calc(100% - 1rem);
   max-height: calc(100% - 1rem);
-  border: 0.5rem solid #ffa04e;
-  border-radius: 0.5rem;
+  border: 2px solid #ffa04e;
+}
+
+.main--pages:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: black;
+  opacity: 0;
+  transition: 0.15s linear opacity;
+  pointer-events: none;
+}
+.main--pages.open:before {
+  opacity: 0.5;
+  pointer-events: initial;
+}
+.main--pages .item--content {
+  position: absolute;
+  top: 0;
+  transition: 0.15s linear transform;
+  width: 100%;
+}
+.main--pages .item--content.open {
+  transform: translate(0, -100%);
 }
 
 .lightbox .lb-data .lb-details {

@@ -46,9 +46,29 @@
       "work_img_src" : "websites_pleroma2.png",
       "work_items" : [
         {
-          "image_name" : "",
-          "image_src" : "",
-          "image_caption" : ""
+          "image_name" : "websites_pleroma",
+          "image_src" : "websites_pleroma.png",
+          "image_caption" : "Pleroma Coaching Website (1/2)"
+        },
+        {
+          "image_name" : "websites_pleroma2",
+          "image_src" : "websites_pleroma2.png",
+          "image_caption" : "Pleroma Coaching Website (2/2)"
+        },
+        {
+          "image_name" : "websites_totalplatonic2",
+          "image_src" : "websites_totalplatonic2.png",
+          "image_caption" : "Totally Platonic Website (1/3)"
+        },
+        {
+          "image_name" : "websites_totalplatonic3",
+          "image_src" : "websites_totalplatonic3.png",
+          "image_caption" : "Totally Platonic Website (2/3)"
+        },
+        {
+          "image_name" : "websites_totalplatonic4",
+          "image_src" : "websites_totalplatonic4.png",
+          "image_caption" : "Totally Platonic Website (3/3)"
         }
       ]
     },
@@ -57,9 +77,44 @@
       "work_img_src" : "handiwork_flowers2.jpg",
       "work_items" : [
         {
-          "image_name" : "",
-          "image_src" : "",
-          "image_caption" : ""
+          "image_name" : "handiwork_boxpaint2",
+          "image_src" : "handiwork_boxpaint2.jpg",
+          "image_caption" : "Wooden Box Paint work - Galaxy Theme (1/2)"
+        },
+        {
+          "image_name" : "handiwork_boxpaint3",
+          "image_src" : "handiwork_boxpaint3.jpg",
+          "image_caption" : "Wooden Box Paint Work - Galaxy Theme (2/2)"
+        },
+        {
+          "image_name" : "handiwork_cantinaband",
+          "image_src" : "handiwork_cantinaband.jpg",
+          "image_caption" : "Crochet - Cantina Band (Star Wars)"
+        },
+        {
+          "image_name" : "handiwork_coaster2",
+          "image_src" : "handiwork_coaster2.jpg",
+          "image_caption" : "Crochet - Flower Coasters Set"
+        },
+        {
+          "image_name" : "handiwork_dicebag",
+          "image_src" : "handiwork_dicebag.jpg",
+          "image_caption" : "Crochet - Pouches, made to hold DND dice"
+        },
+        {
+          "image_name" : "handiwork_flowers2",
+          "image_src" : "handiwork_flowers2.jpg",
+          "image_caption" : "Crochet - Flowers"
+        },
+        {
+          "image_name" : "handiwork_hollowknight",
+          "image_src" : "handiwork_hollowknight.jpg",
+          "image_caption" : "Crochet - The Vessel and Hornet (Hollow Knight)"
+        },
+        {
+          "image_name" : "handiwork_toothless",
+          "image_src" : "handiwork_toothless.jpg",
+          "image_caption" : "Crochet - Toothless and Light Fury (How to Train Your Dragon)"
         }
       ]
     },
@@ -68,9 +123,39 @@
       "work_img_src" : "illustration_panda.png",
       "work_items" : [
         {
-          "image_name" : "",
-          "image_src" : "",
-          "image_caption" : ""
+          "image_name" : "illustration_cchengtv",
+          "image_src" : "illustration_cchengtv.png",
+          "image_caption" : "CChengTV Twitch Steaming Profile Icon"
+        },
+        {
+          "image_name" : "illustration_cchengtv2",
+          "image_src" : "illustration_cchengtv2.png",
+          "image_caption" : "CChengTV Twitch Steaming Emotes"
+        },
+        {
+          "image_name" : "illustration_panda",
+          "image_src" : "illustration_panda.png",
+          "image_caption" : "Motivational Poster - Panda Fall Theme"
+        },
+        {
+          "image_name" : "illustration_panda2",
+          "image_src" : "illustration_panda2.png",
+          "image_caption" : "Motivational Poster - Panda Spring Theme"
+        },
+        {
+          "image_name" : "illustration_rpg",
+          "image_src" : "illustration_rpg.png",
+          "image_caption" : "RPG Maker Game - Character Icons"
+        },
+        {
+          "image_name" : "illustration_tattoo",
+          "image_src" : "illustration_tattoo.png",
+          "image_caption" : "Tattoo Design - Outer Wilds"
+        },
+        {
+          "image_name" : "illustration_tattoo2",
+          "image_src" : "illustration_tattoo2.png",
+          "image_caption" : "Tattoo Design - \"Biblically Accurate\" Angel"
         }
       ]
     }
