@@ -240,19 +240,22 @@ section:before {
   left: 0;
   background-color: #ffa04e;
 }
+section .work--list,
+section .page--content {
+  padding: 2rem;
+}
 
 .item--content {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 100%;
   left: 0;
+  bottom: -100%;
   width: 100vw;
-  height: 100vh;
-  transition: 0.5s ease top;
+  transition: 0.5s ease bottom;
 }
 .item--content.open {
-  top: 0;
+  bottom: 0;
 }
 .item--header {
   display: flex;
@@ -278,7 +281,6 @@ section:before {
   grid-gap: 2rem;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 .work--item {
   position: relative;

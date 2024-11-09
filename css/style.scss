@@ -322,6 +322,10 @@ section {
     left: 0;
     background-color: $base-orange;
   }
+  .work--list,
+  .page--content {
+    padding: 2rem;
+  }
 }
 .item {
   &--content {
@@ -329,15 +333,14 @@ section {
     flex-direction: column;
 
     position: fixed;
-    top: 100%;
     left: 0;
-    // right: 100%;
+    bottom: -100%;
     width: 100vw;
-    height: 100vh;
-    transition: 0.5s ease top;
+    // height: 100%;
+    transition: 0.5s ease bottom;
 
     &.open {
-      top: 0;
+    bottom: 0;
     }
   }
   &--header {
@@ -367,7 +370,6 @@ section {
     // overflow-y: scroll;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
   }
   &--item {
     position: relative;
