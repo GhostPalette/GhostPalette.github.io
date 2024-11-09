@@ -121,7 +121,7 @@ function populate_content(content) {
   const pages = content.pages;
   // Page Content Element
   const page_content_container = document.createElement("div");
-  page_content_container.classList.add('content--work');
+  page_content_container.classList.add('content--page');
   // Loop Through JSON to Product Panels with Work
   for( const page of pages ) {
     // Page Variables
