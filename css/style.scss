@@ -147,7 +147,7 @@ header {
     &--panel {
       label {
         font-size: 2rem;
-        opacity: 0;
+        // opacity: 0;
         transition: 0.2s linear opacity;
         cursor: pointer;
       }
@@ -158,32 +158,45 @@ header {
         z-index: 2;
       }
       label {
+        display: block;
         position: relative;
+        z-index: 5;
         color: white;
-        z-index: 4;
+        opacity: 0;
+        padding: .75rem;
+        // opacity: .9;
+        // Transition
+        // height: 1em;
+        // transition: 0.3s linear height;
       }
-      &:before, // Site Load Animation
-      &:after { // Hover Animation
+      label,
+      &:before {
+        transition: .15s linear opacity;
+      }
+      &:before { // Site Load Animation
+      // &:after { // Hover Animation
         content: '';
         position: absolute;
         @extend %position-fill;
       }
       &:before {
-        z-index: 1;
-      }
-      &:after {
-        opacity: 0;
+        opacity: .05;
         z-index: 3;
-        transition: 0.15s linear opacity;
+        background: black;
       }
+      // &:after {
+      //   opacity: 0;
+      //   z-index: 4;
+      //   transition: 0.15s linear opacity;
+      // }
       &:nth-of-type(odd) {
-        // &:before,
+        label,
         &:after {
           background-color: $base-orange;
         }
       }
       &:nth-of-type(even) {
-        // &:before,
+        label,
         &:after {
           background-color: $base-pink;
         }
@@ -191,26 +204,31 @@ header {
       body[layout=normal] & {
         &:nth-of-type(1),
         &:nth-of-type(4) {
-          // &:before,
+          label,
           &:after {
             background-color: $base-orange;
           }
         }
         &:nth-of-type(2),
         &:nth-of-type(3) {
-          // &:before,
+          label,
           &:after {
             background-color: $base-pink;
           }
         }
       }
       &:hover {
+        // label,
+        &:before {
+          opacity: .3;
+        }
         label {
-          opacity: 1;
-        }
-        &:after {
           opacity: .9;
+          // background-color: transparent;
         }
+        // &:after {
+        //   opacity: .9;
+        // }
       }
     }
   }
@@ -221,7 +239,7 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 225px;
+    width: 175px;
     max-width: 30%;
     border-radius: 50%;
     background: white;
@@ -348,6 +366,9 @@ footer {
       }
     }
   }
+  &.open {
+    
+  }
 }
 
 // ----- Sections ----- //
@@ -418,7 +439,7 @@ section {
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
-    flex: 1;
+    // flex: 1;
   }
   &--item {
     position: relative;

@@ -29,37 +29,43 @@ $( document ).ready(function() {
     click_panel_button(panel);
     header.addClass('close');
   });
+  // --- Click Close Work Button
+  $(document).on('click', '.main--work .button--close', function(e) {
+    header.removeClass('close');
+    setTimeout(function() {
+      $('.main--work, .main--work .item--content').removeClass('open');
+    }, 300);
+  });
 
   // --- Click Page Button
   $(document).on('click', '.footer--menu .footer--button', function(e) {
     var panel = $(this).attr('page');
     click_panel_button(panel);
   });
-
-  // --- Click Close Buttons
-  $(document).on('click', '.item--content .item--header .button--close', function(e) {
-    close_panel_button();
+  // --- Click Close Page Button
+  $(document).on('click', '.main--pages .button--close', function(e) {
+    $('.main--pages, .main--pages .item--content').removeClass('open');
   });
 
   // --- Click Panel Button Functions
   function click_panel_button(panel) {
-    // Clear Opens
-    close_panel_button();
     // Apply Opens
     $('.item--content[panel="' + panel + '"]').parent().addClass('open');
     $('.item--content[panel="' + panel + '"]').addClass('open');
   }
-  function close_panel_button() {
-    $('.item--content').removeClass('open');
-    $('.main--work, .main--pages').removeClass('open');
-    header.removeClass('close');
-  }
+
+  // --- Click Footer Menu Button
+  $(document).on('click', 'footer .footer--open', function(e) {
+    $(this).parent('footer').toggleClass('open');
+  });
 
 
   // TODO:
+  // -- Footer buttons - functionality
+  // -- Responsive logo locations
 
   // For Fun:
-  // -- Spin Logo on Hover or Click
+  // -- Logo interaction animation
   // -- 
 
 });

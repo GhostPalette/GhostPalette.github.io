@@ -1,4 +1,4 @@
-header .header--panel:before, header .header--panel:after, header .header--panel img, header {
+header .header--panel:before, header .header--panel img, header {
   height: 100%;
   width: 100%;
   top: 0;
@@ -146,7 +146,6 @@ body[layout=vertical] header .header--panels {
 }
 header .header--panel label {
   font-size: 2rem;
-  opacity: 0;
   transition: 0.2s linear opacity;
   cursor: pointer;
 }
@@ -157,38 +156,41 @@ header .header--panel img {
   z-index: 2;
 }
 header .header--panel label {
+  display: block;
   position: relative;
+  z-index: 5;
   color: white;
-  z-index: 4;
+  opacity: 0;
+  padding: 0.75rem;
 }
-header .header--panel:before, header .header--panel:after {
+header .header--panel label, header .header--panel:before {
+  transition: 0.15s linear opacity;
+}
+header .header--panel:before {
   content: "";
   position: absolute;
 }
 header .header--panel:before {
-  z-index: 1;
-}
-header .header--panel:after {
-  opacity: 0;
+  opacity: 0.05;
   z-index: 3;
-  transition: 0.15s linear opacity;
+  background: black;
 }
-header .header--panel:nth-of-type(odd):after {
+header .header--panel:nth-of-type(odd) label, header .header--panel:nth-of-type(odd):after {
   background-color: #ffa04e;
 }
-header .header--panel:nth-of-type(even):after {
+header .header--panel:nth-of-type(even) label, header .header--panel:nth-of-type(even):after {
   background-color: #FF93B3;
 }
-body[layout=normal] header .header--panel:nth-of-type(1):after, body[layout=normal] header .header--panel:nth-of-type(4):after {
+body[layout=normal] header .header--panel:nth-of-type(1) label, body[layout=normal] header .header--panel:nth-of-type(1):after, body[layout=normal] header .header--panel:nth-of-type(4) label, body[layout=normal] header .header--panel:nth-of-type(4):after {
   background-color: #ffa04e;
 }
-body[layout=normal] header .header--panel:nth-of-type(2):after, body[layout=normal] header .header--panel:nth-of-type(3):after {
+body[layout=normal] header .header--panel:nth-of-type(2) label, body[layout=normal] header .header--panel:nth-of-type(2):after, body[layout=normal] header .header--panel:nth-of-type(3) label, body[layout=normal] header .header--panel:nth-of-type(3):after {
   background-color: #FF93B3;
+}
+header .header--panel:hover:before {
+  opacity: 0.3;
 }
 header .header--panel:hover label {
-  opacity: 1;
-}
-header .header--panel:hover:after {
   opacity: 0.9;
 }
 header .logo {
@@ -197,7 +199,7 @@ header .logo {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  width: 225px;
+  width: 175px;
   max-width: 30%;
   border-radius: 50%;
   background: white;
@@ -337,7 +339,6 @@ footer .footer--button {
 footer .footer--button:hover {
   padding-bottom: 1rem;
 }
-
 section {
   position: relative;
   background-color: white;
@@ -404,7 +405,6 @@ section .page--content {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
-  flex: 1;
 }
 .work--item {
   position: relative;

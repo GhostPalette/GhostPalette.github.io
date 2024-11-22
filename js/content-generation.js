@@ -93,7 +93,7 @@ function populate_content(content) {
       work_item_div.classList.add("work--item");
       const work_item_light_box = document.createElement("a");
       work_item_light_box.setAttribute("href", item_src);
-      work_item_light_box.setAttribute("data-lightbox", item_name);
+      work_item_light_box.setAttribute("data-lightbox", work_type);
       work_item_light_box.setAttribute("data-title", item_label);
       const work_item_image = document.createElement("img");
       work_item_image.setAttribute("src", item_src);
