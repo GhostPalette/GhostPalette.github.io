@@ -1,11 +1,13 @@
 // // ----- Variables ----- //
 $base-orange: #ffa04e;
 $base-pink: #FF93B3;
-$base-sage: #146551;
+$base-sage: #22A888;
 
 $base-orange-lt: #FFEEDB;
 $base-pink-lt: #FFE9EF;
 $base-sage-lt: #E1F2ED;
+
+$base-grey: #D1D1D1;
 
 // $orange-2: #fffaf5;
 // $pink-2: #fdbace;
@@ -18,6 +20,8 @@ $base-sage-lt: #E1F2ED;
 //   left: 0;
 // }
 
+$container-padding: 1rem;
+$logo-size: 9rem;
 
 // ----- Fonts ----- //
 %Comfortaa {
@@ -25,6 +29,12 @@ $base-sage-lt: #E1F2ED;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+h1 {
+  font-size: 1.5rem;
 }
 
 // ----- Mixins & Animations ----- //
@@ -35,32 +45,55 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
-
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.container {
+  padding: $container-padding;
+}
 
 
 // ----- Layout ----- //
 body {
   @extend %Comfortaa;
+  font-size: 20px;
   color: black;
   margin: 0;
 }
 
 header {
   position: relative;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    border-bottom: 3px solid $base-grey;
+    padding-bottom: .25rem;
+  }
   .title {
+    margin-left: $logo-size;
     text-transform: uppercase;
     span {
       font-size: 1.25em;
     }
   }
+  ul {
+    display: flex;
+    li {
+      font-size: .85em;
+      margin-left: 1em;
+    }
+  }
 }
-
 .logo {
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 175px;
+  left: $container-padding;
+  top: $container-padding;
+  width: $logo-size;
+  z-index: 2;
   // max-width: 30%;
   // border-radius: 50%;
   // background: white;

@@ -2,160 +2,321 @@
   "work" : [
     {
       "work_type" : "design",
-      "work_img_src" : "design_cchengtv4.png",
-      "work_items" : [
+      "work_projects" : [
         {
-          "image_name" : "design_faf",
-          "image_src" : "design_faf.png",
-          "image_caption" : "Book Cover Design for the health help book \"Fit @ Fifty\" (2021)"
+          "project_cover" : "logo_1.png",
+          "project_label" : "Logos",
+          "project_items" : [
+            {
+              "image_name" : "logo_1",
+              "image_src" : "logo_1.png",
+              "image_caption" : "First Logo"
+            },
+            {
+              "image_name" : "logo_2",
+              "image_src" : "logo_2.png",
+              "image_caption" : "Second Logo - Not used"
+            },
+            {
+              "image_name" : "logo_3",
+              "image_src" : "logo_3.png",
+              "image_caption" : "Third Logo"
+            }
+          ]
         },
         {
-          "image_name" : "design_cchengtv4",
-          "image_src" : "design_cchengtv4.png",
-          "image_caption" : "Info Banners for a Twitch video streaming channel CChengTV (2020)"
+          "project_cover" : "pleroma.png",
+          "project_label" : "Pleroma",
+          "project_items" : [
+            {
+              "image_name" : "pleroma_2",
+              "image_src" : "pleroma_2.png",
+              "image_caption" : "Website Design V1"
+            },
+            {
+              "image_name" : "pleroma_1",
+              "image_src" : "pleroma_1.png",
+              "image_caption" : "Storefront Banners"
+            }
+          ]
         },
         {
-          "image_name" : "design_cchengtv5",
-          "image_src" : "design_cchengtv5.png",
-          "image_caption" : "Additional Info Banners for a Twitch video streaming channel CChengTV (2020)"
+          "project_cover" : "cchengtv_1.png",
+          "project_label" : "CChengTV - Twitch Banners",
+          "project_items" : [
+            {
+              "image_name" : "cchengtv_1",
+              "image_src" : "cchengtv_1.png",
+              "image_caption" : "CChengTV Twitch Channel Social Media Banners - Version Options"
+            },
+            {
+              "image_name" : "cchengtv_2",
+              "image_src" : "cchengtv_2.png",
+              "image_caption" : "CChengTV Twitch Channel Social Media Banners - Final"
+            }
+          ]
         },
         {
-          "image_name" : "design_visualnovel_ui",
-          "image_src" : "design_visualnovel_ui.png",
-          "image_caption" : "Visual Novel UI Design (2020)"
+          "project_cover" : "fitatfifty.png",
+          "project_label" : "Fit At Fifty",
+          "project_items" : [
+            {
+              "image_name" : "fitatfifty",
+              "image_src" : "fitatfifty.png",
+              "image_caption" : "Fit @ Fifty - E-book Cover"
+            }
+          ]
         },
         {
-          "image_name" : "design_visualnovel_ui3",
-          "image_src" : "design_visualnovel_ui3.png",
-          "image_caption" : "Additional Visual Novel UI Design (2020)"
+          "project_cover" : "totalplatonic.png",
+          "project_label" : "Totally Platonic - Handmade Jewelry Artist Website",
+          "project_items" : [
+            {
+              "image_name" : "totalplatonic",
+              "image_src" : "totalplatonic.png",
+              "image_caption" : "Website Home Page"
+            },
+            {
+              "image_name" : "totalplatonic_2",
+              "image_src" : "totalplatonic_2.png",
+              "image_caption" : "Website Home Page 2"
+            },
+            {
+              "image_name" : "totalplatonic_3",
+              "image_src" : "totalplatonic_3.png",
+              "image_caption" : "Website Products"
+            },
+            {
+              "image_name" : "totalplatonic_4",
+              "image_src" : "totalplatonic_4.png",
+              "image_caption" : "Website Products Category"
+            }
+          ]
         },
         {
-          "image_name" : "design_visualnovel_ui6",
-          "image_src" : "design_visualnovel_ui6.png",
-          "image_caption" : "Additional Visual Novel UI Design (2020)"
+          "project_cover" : "visualnovel_ui_1.png",
+          "project_label" : "Visual Novel UI",
+          "project_items" : [
+            {
+              "image_name" : "visualnovel_ui_1",
+              "image_src" : "visualnovel_ui_1.png",
+              "image_caption" : "Menu Design"
+            },
+            {
+              "image_name" : "visualnovel_ui_2",
+              "image_src" : "visualnovel_ui_2.png",
+              "image_caption" : "Dialogue Box Design"
+            }
+          ]
         },
         {
-          "image_name" : "design_appwireframes",
-          "image_src" : "design_appwireframes.png",
-          "image_caption" : "App Design - Undergrad Assignment (2018)"
+          "project_cover" : "appwireframes.png",
+          "project_label" : "App Wireframes",
+          "project_items" : [
+            {
+              "image_name" : "appwireframes",
+              "image_src" : "appwireframes.png",
+              "image_caption" : "Task Tracker App Wireframes"
+            }
+          ]
         }
       ]
     },
     {
-      "work_type" : "websites",
-      "work_img_src" : "websites_pleroma2.png",
-      "work_items" : [
+      "work_type" : "digital",
+      "work_projects" : [
         {
-          "image_name" : "websites_pleroma",
-          "image_src" : "websites_pleroma.png",
-          "image_caption" : "Pleroma Coaching Website (1/2)"
+          "project_cover" : "sprouts_1.jpg",
+          "project_label" : "Sprouts - Characters",
+          "project_items" : [
+            {
+              "image_name" : "sprouts_1",
+              "image_src" : "sprouts_1.jpg",
+              "image_caption" : "Sprouts - Orange - Ground Type"
+            },
+            {
+              "image_name" : "sprouts_2",
+              "image_src" : "sprouts_2.jpg",
+              "image_caption" : "Sprouts - Beige - Air Type"
+            },
+            {
+              "image_name" : "sprouts_3",
+              "image_src" : "sprouts_3.jpg",
+              "image_caption" : "Sprouts - Pink - Water Type"
+            }
+          ]
         },
         {
-          "image_name" : "websites_pleroma2",
-          "image_src" : "websites_pleroma2.png",
-          "image_caption" : "Pleroma Coaching Website (2/2)"
+          "project_cover" : "tattoo_1.png",
+          "project_label" : "Tattoos",
+          "project_items" : [
+            {
+              "image_name" : "tattoo_1",
+              "image_src" : "tattoo_1.png",
+              "image_caption" : "Outer Wilds - Spaceship Tattoo"
+            },
+            {
+              "image_name" : "tattoo_2",
+              "image_src" : "tattoo_2.png",
+              "image_caption" : "Angel (Biblically \"Accurate\")"
+            }
+          ]
         },
         {
-          "image_name" : "websites_totalplatonic2",
-          "image_src" : "websites_totalplatonic2.png",
-          "image_caption" : "Totally Platonic Website (1/3)"
+          "project_cover" : "panda_1.png",
+          "project_label" : "Inspirational Panda",
+          "project_items" : [
+            {
+              "image_name" : "panda_1",
+              "image_src" : "panda_1.png",
+              "image_caption" : "Inspirational Panda Poster - Fall Ver."
+            },
+            {
+              "image_name" : "panda_2",
+              "image_src" : "panda_2.png",
+              "image_caption" : "Inspirational Panda Poster - Spring Ver."
+            }
+          ]
         },
         {
-          "image_name" : "websites_totalplatonic3",
-          "image_src" : "websites_totalplatonic3.png",
-          "image_caption" : "Totally Platonic Website (2/3)"
+          "project_cover" : "cchengtv.png",
+          "project_label" : "CChengTV - Twitch Icon & Emotes",
+          "project_items" : [
+            {
+              "image_name" : "cchengtv",
+              "image_src" : "cchengtv.png",
+              "image_caption" : "CChengTV Twitch Channel Icon"
+            },
+            {
+              "image_name" : "cchengtv_2",
+              "image_src" : "cchengtv_2.png",
+              "image_caption" : "CChengTV Twitch Channel Emotes"
+            }
+          ]
         },
         {
-          "image_name" : "websites_totalplatonic4",
-          "image_src" : "websites_totalplatonic4.png",
-          "image_caption" : "Totally Platonic Website (3/3)"
+          "project_cover" : "photo_flower.png",
+          "project_label" : "Floral Cafe in Japan - Photograph",
+          "project_items" : [
+            {
+              "image_name" : "photo_flower",
+              "image_src" : "photo_flower.png",
+              "image_caption" : "Photograph of Decorative Piece in a Floral Cafe in Tokyo, Japan"
+            }
+          ]
+        },
+        {
+          "project_cover" : "rpg_profiles.png",
+          "project_label" : "RPG Character Profiles",
+          "project_items" : [
+            {
+              "image_name" : "rpg_profiles",
+              "image_src" : "rpg_profiles.png",
+              "image_caption" : "RPG Character Dialogue Box Face Icons"
+            }
+          ]
         }
       ]
     },
     {
-      "work_type" : "handiwork",
-      "work_img_src" : "handiwork_flowers2.jpg",
-      "work_items" : [
+      "work_type" : "traditional",
+      "work_projects" : [
         {
-          "image_name" : "handiwork_boxpaint2",
-          "image_src" : "handiwork_boxpaint2.jpg",
-          "image_caption" : "Wooden Box Paint work - Galaxy Theme (1/2)"
+          "project_cover" : "flowers",
+          "project_label" : "Flowers - Crochet",
+          "project_items" : [
+            {
+              "image_name" : "flowers",
+              "image_src" : "flowers.jpg",
+              "image_caption" : "Crochet Roses - Various Colors"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_boxpaint3",
-          "image_src" : "handiwork_boxpaint3.jpg",
-          "image_caption" : "Wooden Box Paint Work - Galaxy Theme (2/2)"
+          "project_cover" : "dicebag.jpg",
+          "project_label" : "Dicebags - Crochet",
+          "project_items" : [
+            {
+              "image_name" : "dicebag",
+              "image_src" : "dicebag.jpg",
+              "image_caption" : "Crochet Dicebags / Pouches in Red and Blue"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_cantinaband",
-          "image_src" : "handiwork_cantinaband.jpg",
-          "image_caption" : "Crochet - Cantina Band (Star Wars)"
+          "project_cover" : "hollowknight.jpg",
+          "project_label" : "Hollow Knight Crochet",
+          "project_items" : [
+            {
+              "image_name" : "hollowknight",
+              "image_src" : "hollowknight.jpg",
+              "image_caption" : "Crochet Hollow Knight Characters - The Vessel and Hornet"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_coaster2",
-          "image_src" : "handiwork_coaster2.jpg",
-          "image_caption" : "Crochet - Flower Coasters Set"
+          "project_cover" : "cantinaband.jpg",
+          "project_label" : "Crochet Star Wars Candtina Band",
+          "project_items" : [
+            {
+              "image_name" : "cantinaband",
+              "image_src" : "cantinaband.jpg",
+              "image_caption" : "Crochet Star Wars Candtina Band"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_dicebag",
-          "image_src" : "handiwork_dicebag.jpg",
-          "image_caption" : "Crochet - Pouches, made to hold DND dice"
+          "project_cover" : "toothless.jpg",
+          "project_label" : "Crochet Toothless & Lightfury",
+          "project_items" : [
+            {
+              "image_name" : "toothless",
+              "image_src" : "toothless.jpg",
+              "image_caption" : "Crochet Toothless and Lightfury from How to Train Your Dragon movie series"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_flowers2",
-          "image_src" : "handiwork_flowers2.jpg",
-          "image_caption" : "Crochet - Flowers"
+          "project_cover" : "spacebox_1.jpg",
+          "project_label" : "Painted Wooden Box - Space Themed",
+          "project_items" : [
+            {
+              "image_name" : "spacebox_1",
+              "image_src" : "spacebox_1.jpg",
+              "image_caption" : "Painted Wooden Box - Space Themed - to gift a Dice Set"
+            },
+            {
+              "image_name" : "spacebox_2",
+              "image_src" : "spacebox_2.jpg",
+              "image_caption" : "Painted Wooden Box - Space Themed - Inside"
+            }
+          ]
         },
         {
-          "image_name" : "handiwork_hollowknight",
-          "image_src" : "handiwork_hollowknight.jpg",
-          "image_caption" : "Crochet - The Vessel and Hornet (Hollow Knight)"
-        },
-        {
-          "image_name" : "handiwork_toothless",
-          "image_src" : "handiwork_toothless.jpg",
-          "image_caption" : "Crochet - Toothless and Light Fury (How to Train Your Dragon)"
-        }
-      ]
-    },
-    {
-      "work_type" : "illustrations",
-      "work_img_src" : "illustration_panda.png",
-      "work_items" : [
-        {
-          "image_name" : "illustration_cchengtv",
-          "image_src" : "illustration_cchengtv.png",
-          "image_caption" : "CChengTV Twitch Steaming Profile Icon"
-        },
-        {
-          "image_name" : "illustration_cchengtv2",
-          "image_src" : "illustration_cchengtv2.png",
-          "image_caption" : "CChengTV Twitch Steaming Emotes"
-        },
-        {
-          "image_name" : "illustration_panda",
-          "image_src" : "illustration_panda.png",
-          "image_caption" : "Motivational Poster - Panda Fall Theme"
-        },
-        {
-          "image_name" : "illustration_panda2",
-          "image_src" : "illustration_panda2.png",
-          "image_caption" : "Motivational Poster - Panda Spring Theme"
-        },
-        {
-          "image_name" : "illustration_rpg",
-          "image_src" : "illustration_rpg.png",
-          "image_caption" : "RPG Maker Game - Character Icons"
-        },
-        {
-          "image_name" : "illustration_tattoo",
-          "image_src" : "illustration_tattoo.png",
-          "image_caption" : "Tattoo Design - Outer Wilds"
-        },
-        {
-          "image_name" : "illustration_tattoo2",
-          "image_src" : "illustration_tattoo2.png",
-          "image_caption" : "Tattoo Design - \"Biblically Accurate\" Angel"
+          "project_cover" : "bill_cypher_1",
+          "project_label" : "Bill Cypher from Gravity Falls - Wooden",
+          "project_items" : [
+            {
+              "image_name" : "bill_cypher_1",
+              "image_src" : "bill_cypher_1.jpg",
+              "image_caption" : "Bill Cypher from Gravity Falls - Wooden, with a shakable hand"
+            },
+            {
+              "image_name" : "bill_cypher_2",
+              "image_src" : "bill_cypher_2.jpg",
+              "image_caption" : "Bill Cypher - Alternate View"
+            },
+            {
+              "image_name" : "bill_cypher_3",
+              "image_src" : "bill_cypher_3.jpg",
+              "image_caption" : "Bill Cypher - Alternate View"
+            },
+            {
+              "image_name" : "bill_cypher_4",
+              "image_src" : "bill_cypher_4.jpg",
+              "image_caption" : "Bill Cypher - Shaken hand in down position closes the eye"
+            }
+          ]
         }
       ]
     }
