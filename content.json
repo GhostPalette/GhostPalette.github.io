@@ -147,17 +147,17 @@
           ]
         },
         {
-          "project_cover" : "tattoo_1.png",
+          "project_cover" : "tattoo_1.jpg",
           "project_label" : "Tattoos",
           "project_items" : [
             {
               "image_name" : "tattoo_1",
-              "image_src" : "tattoo_1.png",
+              "image_src" : "tattoo_1.jpg",
               "image_caption" : "Outer Wilds - Spaceship Tattoo"
             },
             {
               "image_name" : "tattoo_2",
-              "image_src" : "tattoo_2.png",
+              "image_src" : "tattoo_2.jpg",
               "image_caption" : "Angel (Biblically \"Accurate\")"
             }
           ]
@@ -195,12 +195,12 @@
           ]
         },
         {
-          "project_cover" : "photo_flower.png",
+          "project_cover" : "photo_flower.jpg",
           "project_label" : "Floral Cafe in Japan - Photograph",
           "project_items" : [
             {
               "image_name" : "photo_flower",
-              "image_src" : "photo_flower.png",
+              "image_src" : "photo_flower.jpg",
               "image_caption" : "Photograph of Decorative Piece in a Floral Cafe in Tokyo, Japan"
             }
           ]
@@ -222,7 +222,7 @@
       "work_type" : "traditional",
       "work_projects" : [
         {
-          "project_cover" : "flowers",
+          "project_cover" : "flowers.jpg",
           "project_label" : "Flowers - Crochet",
           "project_items" : [
             {
@@ -293,27 +293,27 @@
           ]
         },
         {
-          "project_cover" : "bill_cypher_1",
+          "project_cover" : "bill_cypher_1.png",
           "project_label" : "Bill Cypher from Gravity Falls - Wooden",
           "project_items" : [
             {
               "image_name" : "bill_cypher_1",
-              "image_src" : "bill_cypher_1.jpg",
+              "image_src" : "bill_cypher_1.png",
               "image_caption" : "Bill Cypher from Gravity Falls - Wooden, with a shakable hand"
             },
             {
               "image_name" : "bill_cypher_2",
-              "image_src" : "bill_cypher_2.jpg",
+              "image_src" : "bill_cypher_2.png",
               "image_caption" : "Bill Cypher - Alternate View"
             },
             {
               "image_name" : "bill_cypher_3",
-              "image_src" : "bill_cypher_3.jpg",
+              "image_src" : "bill_cypher_3.png",
               "image_caption" : "Bill Cypher - Alternate View"
             },
             {
               "image_name" : "bill_cypher_4",
-              "image_src" : "bill_cypher_4.jpg",
+              "image_src" : "bill_cypher_4.png",
               "image_caption" : "Bill Cypher - Shaken hand in down position closes the eye"
             }
           ]
