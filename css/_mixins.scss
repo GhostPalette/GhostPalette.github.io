@@ -48,29 +48,29 @@
 
 }
 // Animations -- Keyframes
-@include keyframes(FadeInLogo) {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@include keyframes(FadeIn) {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@include keyframes(FadeOut) {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+// @include keyframes(FadeInLogo) {
+//   0% {
+//     opacity: 0;
+//     transform: scale(1.5);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+// }
+// @include keyframes(FadeIn) {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+// @include keyframes(FadeOut) {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
