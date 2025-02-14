@@ -48,7 +48,7 @@ function populate_content(content) {
 
     // Create Work Items Element & Classes
     const work_items_container = document.createElement("div");
-    work_items_container.classList.add("work--list");
+    work_items_container.classList.add("work--list", "container");
 
     for( const project of work_content ) {
       // Item Variables
@@ -91,7 +91,7 @@ function populate_content(content) {
 
     // Create Content Element
     const page_content_div = document.createElement("div");
-    page_content_div.classList.add("page--content");
+    page_content_div.classList.add("page--content", "container");
     page_content_div.textContent = page_content;
 
     // Nest Page Items
@@ -109,11 +109,10 @@ function create_section_and_header( section_name, type = 'work' ) {
 
   // Initialize Parent Elements & Their Classes
   const item_section = document.createElement("section");
-  item_section.classList.add("container");
   item_section.setAttribute('data_type', type);
   item_section.setAttribute('data_' + type + '_type', section_name);
   const item_header = document.createElement("div");
-  item_header.classList.add(type + "--header");
+  item_header.classList.add(type + "--header", "container");
 
   // Populate Header
   const item_header_label = document.createElement("h2");

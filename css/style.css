@@ -13,6 +13,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+.sr-only {
+  display: none;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -22,6 +26,20 @@ ul, li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+button, .btn {
+  position: relative;
+  padding: 0.5rem;
+  margin: 0;
+  border: none;
+  background: #ffa04e;
+  color: white;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .container {
@@ -43,13 +61,15 @@ body {
 }
 
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 3px solid #D1D1D1;
+  background: white;
   padding-bottom: 0.25rem;
 }
 header .title {
@@ -68,13 +88,59 @@ header ul li {
 }
 
 .nav--work {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 0.25rem 1rem;
   text-align: right;
 }
+.nav--work .work--btn {
+  background-color: white;
+  color: black;
+}
 
+footer {
+  background-color: #ffa04e;
+}
+
+.work--header {
+  z-index: 1;
+  position: sticky;
+  top: 53px;
+}
+.work--header .label {
+  display: none;
+}
+section[data_work_type=design] .work--header {
+  background-color: #ffa04e;
+}
+section[data_work_type=digital] .work--header {
+  background-color: #FF93B3;
+}
+section[data_work_type=traditional] .work--header {
+  background-color: #22A888;
+}
 .work--list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+}
+.work--list.container {
+  padding: 2rem 1rem;
+}
+.work--project {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px solid #D1D1D1;
+}
+.work--project img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .lightbox .lb-data .lb-details {

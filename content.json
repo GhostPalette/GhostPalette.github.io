@@ -147,17 +147,17 @@
           ]
         },
         {
-          "project_cover" : "tattoo_1.jpg",
+          "project_cover" : "tattoo_1.png",
           "project_label" : "Tattoos",
           "project_items" : [
             {
               "image_name" : "tattoo_1",
-              "image_src" : "tattoo_1.jpg",
+              "image_src" : "tattoo_1.png",
               "image_caption" : "Outer Wilds - Spaceship Tattoo"
             },
             {
               "image_name" : "tattoo_2",
-              "image_src" : "tattoo_2.jpg",
+              "image_src" : "tattoo_2.png",
               "image_caption" : "Angel (Biblically \"Accurate\")"
             }
           ]
