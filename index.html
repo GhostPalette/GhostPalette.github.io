@@ -32,28 +32,42 @@
   <body class="page--home" onload="document.body.classList.add('site--load')">
     <div class="animation--fade-in"></div>
 
-    <header>
-      <div class="container">
+    <header class="container">
+      <div class="header--identity">
         <div class="logo"><img src="https://ghostpalette.github.io/images/GP%20Logo%20[V4].png"></div>
         <h1 class="title"><span>G</span>host <span>P</span>alette</h1>
-        <nav class="nav--top"><ul>
-          <li>About</li>
-          <li>Contact</li>
-          <li>IG<i class="fa-brands fa-instagram"></i></li>
-        </ul></nav>
       </div>
-      <div class="nav--work"></div>
+      <div class="header--menus">
+        <div class="nav--work"></div>
+        <div class="nav--top">
+          <a class="btn" href="#about">About</a>
+          <a class="btn" href="https://www.instagram.com/ghostpalette_art/">IG<i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="header--mobile-btn"></div>
     </header>
 
-    <main></main>
+    <main>
+      <div class="content--work"></div>
+      <div class="content--other">
+
+        <section id="about" data_type="page" data_page_type="about">
+          <div class="page--header container">
+            <h2 class="label">About</h2>
+          </div>
+          <div class="page--content container">
+            <p>Welcome to my portfolio site! This is an archive of some of my nicer projects of various genres, all of which I had a lot of fun making :)</p>
+            <p>I am front-end web-developer for work and enjoy various modes of art on the side. My current passion is crocheting, so expect to see more of those projects added in the future.</p>
+          </div>
+        </section>
+      
+      </div>
+    </main>
 
     <footer>
       <div class="container">
-        Footer
+        ©2025 GhostPalette
       </div>
-      <!-- <button class="footer--open"><i class="fa-solid fa-chevron-left"></i></button>
-      <div class="footer--menu"></div>
-      <div class="copyright"></div> -->
     </footer>
     
     <!-- Content Generation JS -->

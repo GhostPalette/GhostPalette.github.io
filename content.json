@@ -320,15 +320,5 @@
         }
       ]
     }
-  ],
-  "pages" : [
-    {
-      "page_name" : "about",
-      "page_content" : "<p>Fresh beef stoodoo.</p>"
-    },
-    {
-      "page_name" : "contact",
-      "page_content" : "<p>Fresh Chao</p>"
-    }
   ]
 }
