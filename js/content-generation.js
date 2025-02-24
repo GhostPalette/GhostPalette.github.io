@@ -99,10 +99,6 @@ function create_section_and_header( section_name, type = 'work' ) {
   item_header_label.classList.add("label");
   item_header_label.textContent = section_label;
 
-  if( type === 'work') {
-  item_header_label.classList.add("sr-only");
-  }
-
   // Append Header Content
   item_header.appendChild(item_header_label);
 

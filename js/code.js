@@ -8,9 +8,15 @@ $( document ).ready(function() {
   $(document).on('click', 'a[href^="#"]', function (e) {
     e.preventDefault();
 
-    $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
+    if( $(window).width() < 450 ) {
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 100
+      }, 500);
+    } else {
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top + 1
+      }, 500);
+    }
   });
 
   // --- Project Menu - Button Active State --- //
@@ -41,6 +47,23 @@ $( document ).ready(function() {
       }
     })
   }
+
+  // --- Mobile Nav --- //
+
+  // - Button Active State
+  $('.header--mobile-btn button').on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('closed');
+    $('header .header--menus').toggleClass('mobile--open');
+  })
+  // - Menu Button - Close Menu on Click
+  $('.header--menus a[href^="#"]').on('click', function(e) {
+    if( $(window).width() < 450 ) {
+      $(this).toggleClass('closed');
+      $('header .header--menus').toggleClass('mobile--open');
+    }
+  })
+  
 
 
 
