@@ -68,7 +68,7 @@ $( document ).ready(function() {
   var lightbox = $("#lightbox");
   
   // - On Project Image Click
-  $('.work--project > img').on('click', function(e) {
+  $(document).on('click', '.work--project > img', function (e) {
     // Generate Project Gallery
     var projectImages = $(this).siblings('.project--gallery').clone();
     if( projectImages.length > 0 ) {
