@@ -367,7 +367,7 @@ section[data_type=page] .page--content {
     top: 50%;
     transform: translate(0, -50%);
     right: -1rem;
-    background-color: #ffa04e;
+    background-color: #132c51;
     z-index: -1;
   }
   section .page--content.container {

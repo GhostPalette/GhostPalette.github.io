@@ -60,6 +60,7 @@ function populate_content(content) {
       const project_div = document.createElement("div");
       project_div.classList.add("work--project");
       project_div.setAttribute('featured', project.project_featured);
+      project_div.setAttribute('first-load', "true");
       const project_cover_image = document.createElement("img");
       project_cover_image.setAttribute("src", project_cover);
       project_cover_image.setAttribute("data_lightbox", project.project_cover);
