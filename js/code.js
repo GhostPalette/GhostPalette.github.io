@@ -4,7 +4,7 @@ $( document ).ready(function() {
   //    Lightbox - Project internal galleries
   //    Logo interaction animation
 
-  // --- Anchor Link - Smooth Scroll --- //
+// --- Anchor Link - Smooth Scroll --- //
   $(document).on('click', 'a[href^="#"]', function (e) {
     e.preventDefault();
 
@@ -19,7 +19,7 @@ $( document ).ready(function() {
     }
   });
 
-  // --- Project Menu - Button Active State --- //
+// --- Project Menu - Button Active State --- //
 
   // - Set Button to Active on Load
   project_nav_button_active();
@@ -48,7 +48,7 @@ $( document ).ready(function() {
     })
   }
 
-  // --- Mobile Nav --- //
+// --- Mobile Nav --- //
 
   // - Button Active State
   $('.header--mobile-btn button').on('click', function(e) {
@@ -64,7 +64,62 @@ $( document ).ready(function() {
     }
   })
   
+// --- Lightbox --- //
+  var lightbox = $("#lightbox");
+  
+  // - On Project Image Click
+  $('.work--project > img').on('click', function(e) {
+    // Generate Project Gallery
+    var projectImages = $(this).siblings('.project--gallery').clone();
+    if( projectImages.length > 0 ) {
+      lightbox.find('.lightbox--gallery').append(projectImages);
+      if( projectImages.attr('totalcount') > 1 ) {
+        lightbox.find('.lightbox--thumbnails').append(projectImages.clone());
+        lightbox.attr('thumbnails', 'true');
+      }
+    }
+    // Open Lightbox
+    lightbox.removeClass('closed');
+  });
 
+  // - Lightbox Close - Click
+  $('.lightbox--close').on('click', function(e) {
+    // Close Lightbox
+    lightbox.addClass('closed');
+    lightbox.attr('current', '1');
+    // Clear Project Gallery
+    $('.lightbox--gallery').empty();
+    $('.lightbox--thumbnails').empty();
+    lightbox.attr('thumbnails', 'false');
+  });
 
+  // - Function - Switch Gallery Slide Active
+  function gallery_slide_change(newSlide) {
+    lightbox.attr('current', newSlide);
+  }
+  // - Gallery Thumbnail Clicked
+  $(document).on('click', '.lightbox--thumbnails img', function(e) {
+    var newCount = $(this).attr('count');
+    if( newCount ) {
+      gallery_slide_change(newCount);
+    }
+  })
+  // - Gallery Arrow Clicked
+  $('.lightbox--arrows button').on('click', function(e) {
+    var currentCount = lightbox.attr('current');
+    var maxCount = lightbox.find('.project--gallery').attr('totalcount');
+    var newCount = 1;
+    if( $(this).attr('direction') === 'prev' ) {
+      newCount = parseInt(currentCount) - 1;
+      if( newCount === 0 ) newCount = maxCount;
+    } else {
+      if( currentCount === maxCount ) {
+        newCount = 1;
+      } else {
+        newCount = parseInt(currentCount) + 1;
+      }
+    }
+    lightbox.attr('current', newCount);
+  })
 
 });

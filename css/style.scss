@@ -54,6 +54,9 @@ p {
 
 // ----- Mixins & Animations ----- //
 // @import "_mixins";
+@mixin transition($time) {
+  transition: $time cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 // ----- Components ----- //
 .sr-only {
@@ -112,7 +115,7 @@ header {
     margin-top: 2rem;
     margin-bottom: 1em;
     text-transform: uppercase;
-    color: $themeDk;
+    color: $textColorLt;
     span {
       font-size: 1.25em;
     }
@@ -143,7 +146,7 @@ header {
         padding: .75em 0;
         margin: .75em 0;
         text-align: center;
-        transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+        @include transition(.15s);
         transition-property: background-color, color;
         &.active,
         &:hover {
@@ -167,7 +170,8 @@ header {
         margin-top: 0.5em;
         padding: 0;
         background-color: unset;
-        transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) color;
+        @include transition(.15s);
+        transition-property: color;
         &:hover {
           color: $themeLt;
         }
@@ -175,7 +179,7 @@ header {
     }
   }
 }
-// Mobile Nav Button
+// -- Mobile Nav Button
 .header--mobile-btn {
   button {
     position: absolute;
@@ -194,8 +198,8 @@ header {
       top: 11px;
       right: 0;
       border-radius: 5px;
-      background: $baseNavyDk;
-      transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+      background: $textColorLt;
+      @include transition(.15s);
       transition-property: top, bottom;
       &:nth-of-type(1),
       &:nth-of-type(2) {
@@ -269,12 +273,31 @@ section {
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    border: 1px solid $baseGrey;
-    img {
+    &[featured="true"] {
+      @media(min-width: ($exSmallBp + 1)) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+    & > img {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      cursor: pointer;
+      background: white;
+    }
+    .project--gallery {
+      display: none;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $themeDk;
+      top: 5px;
+      left: 5px;
     }
   }
 }
@@ -303,7 +326,6 @@ section[data_type="page"] {
     .title {
       padding-top: $headerWidth;
       text-align: center;
-      color: $textColorLt;
     }
     .header--mobile-btn {
       display: none;
@@ -321,25 +343,32 @@ section[data_type="page"] {
   header {
     position: sticky;
     top: 0;
-    background: white;
-    .title {
-      padding: 0 3rem 0.5rem $headerWidth;
-      margin: 1rem 0 0 1rem;
-      border-bottom: 2px solid $themeDk;
+    &.container {
+      padding: 0;
+    }
+    .header--identity {
+      position: relative;
+      background-color: $themeDk;
+      padding: 0 $containerPadding;
+      .title {
+        padding: 0 3rem 0.5rem $headerWidth;
+        margin: 1rem 0 0 1rem;
+      }
     }
     .header--menus {
       // display: none;
       position: fixed;
-      top: 0;
-      left: 100%;
+      top: -100%;
+      left: 0;
       width: calc(100% - 2rem);
       height: calc(100vh - 9rem);
       background: white;
       padding: 8rem 1rem 1rem;
       z-index: -1;
-      transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) left;
+      @include transition(.3s);
+      transition-property: top;
       &.mobile--open {
-        left: 0;
+        top: 0;
       }
       .nav {
         &--work {
@@ -356,7 +385,8 @@ section[data_type="page"] {
             margin-top: 1rem;
             border-radius: 0;
             border-bottom: 1px solid transparent;
-            transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) border-color;
+            @include transition(.3s);
+            transition-property: border-color;
             &:hover {
               border-color: $themeDk;
             }
@@ -394,15 +424,96 @@ section[data_type="page"] {
 }
 
 // ----- Lightbox ----- //
-.lightbox {
-  .lb-data {
-    .lb-details {
-      margin: .5rem auto;
-      float: unset;
-      text-align: center;
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000ce;
+  z-index: 20;
+  @include transition(.3s);
+  transition-property: opacity, visibility;
+  &.closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  display: flex;
+  flex-direction: column;
+  .project--gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+  }
+  .lightbox {
+    &--gallery {
+      padding: 4rem;
+      flex: 1;
+      img {
+        position: absolute;
+        @include transition(.3s);
+        transition-property: opacity, visibility;
+        opacity: 0;
+        visibility: hidden;
+      }
     }
-    .lb-caption {
-      font-size: 1rem;
+    &--thumbnails {
+      padding: 2rem;
+      .project--gallery {
+        flex-wrap: wrap;
+        grid-gap: 1rem;
+      }
+      img {
+        height: 15vh;
+        cursor: pointer;
+        @include transition(.3s);
+        transition-property: opacity;
+      }
+    }
+    &--close {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+    }
+    &--arrows {
+      position: absolute;
+      top: 35%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      button {
+        margin: .5rem;
+      }
+    }
+  }
+  // Current Slide
+  @for $i from 1 through 5 {
+    &[current="#{$i}"] {
+      .lightbox--gallery {
+        img[count="#{$i}"] {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .lightbox--thumbnails {
+        img[count="#{$i}"] {
+          opacity: .5;
+          cursor: auto;
+        }
+      }
+    }
+  }
+  // No Thumbnails
+  &[thumbnails="false"] {
+    .lightbox {
+      &--thumbnails,
+      &--arrows {
+        display: none;
+      }
     }
   }
 }

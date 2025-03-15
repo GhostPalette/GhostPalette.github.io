@@ -84,7 +84,7 @@ header .title {
   margin-top: 2rem;
   margin-bottom: 1em;
   text-transform: uppercase;
-  color: #132c51;
+  color: white;
 }
 header .title span {
   font-size: 1.25em;
@@ -137,7 +137,8 @@ header .nav--top .btn {
   margin-top: 0.5em;
   padding: 0;
   background-color: unset;
-  transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) color;
+  transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: color;
 }
 header .nav--top .btn:hover {
   color: #C7D5EA;
@@ -161,7 +162,7 @@ header .nav--top .btn:hover {
   top: 11px;
   right: 0;
   border-radius: 5px;
-  background: #132c51;
+  background: white;
   transition: 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-property: top, bottom;
 }
@@ -229,14 +230,33 @@ section .page--content.container {
   width: 100%;
   height: 0;
   padding-bottom: 100%;
-  border: 1px solid #D1D1D1;
 }
-.work--project img {
+@media (min-width: 451px) {
+  .work--project[featured=true] {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+.work--project > img {
   position: absolute;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
+  background: white;
+}
+.work--project .project--gallery {
+  display: none;
+}
+.work--project:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #132c51;
+  top: 5px;
+  left: 5px;
 }
 
 section[data_type=page] {
@@ -262,7 +282,6 @@ section[data_type=page] .page--content {
   header .title {
     padding-top: 8rem;
     text-align: center;
-    color: white;
   }
   header .header--mobile-btn {
     display: none;
@@ -279,26 +298,33 @@ section[data_type=page] .page--content {
   header {
     position: sticky;
     top: 0;
-    background: white;
   }
-  header .title {
+  header.container {
+    padding: 0;
+  }
+  header .header--identity {
+    position: relative;
+    background-color: #132c51;
+    padding: 0 1rem;
+  }
+  header .header--identity .title {
     padding: 0 3rem 0.5rem 8rem;
     margin: 1rem 0 0 1rem;
-    border-bottom: 2px solid #132c51;
   }
   header .header--menus {
     position: fixed;
-    top: 0;
-    left: 100%;
+    top: -100%;
+    left: 0;
     width: calc(100% - 2rem);
     height: calc(100vh - 9rem);
     background: white;
     padding: 8rem 1rem 1rem;
     z-index: -1;
-    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) left;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-property: top;
   }
   header .header--menus.mobile--open {
-    left: 0;
+    top: 0;
   }
   header .header--menus .nav--work {
     flex: unset;
@@ -315,7 +341,8 @@ section[data_type=page] .page--content {
     margin-top: 1rem;
     border-radius: 0;
     border-bottom: 1px solid transparent;
-    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) border-color;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-property: border-color;
   }
   header .header--menus .nav--top .btn:hover {
     border-color: #132c51;
@@ -347,13 +374,112 @@ section[data_type=page] .page--content {
     padding-top: 2rem;
   }
 }
-.lightbox .lb-data .lb-details {
-  margin: 0.5rem auto;
-  float: unset;
-  text-align: center;
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8078431373);
+  z-index: 20;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: opacity, visibility;
+  display: flex;
+  flex-direction: column;
 }
-.lightbox .lb-data .lb-caption {
-  font-size: 1rem;
+#lightbox.closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#lightbox .project--gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+#lightbox .lightbox--gallery {
+  padding: 4rem;
+  flex: 1;
+}
+#lightbox .lightbox--gallery img {
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: opacity, visibility;
+  opacity: 0;
+  visibility: hidden;
+}
+#lightbox .lightbox--thumbnails {
+  padding: 2rem;
+}
+#lightbox .lightbox--thumbnails .project--gallery {
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+}
+#lightbox .lightbox--thumbnails img {
+  height: 15vh;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: opacity;
+}
+#lightbox .lightbox--close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+#lightbox .lightbox--arrows {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#lightbox .lightbox--arrows button {
+  margin: 0.5rem;
+}
+#lightbox[current="1"] .lightbox--gallery img[count="1"] {
+  opacity: 1;
+  visibility: visible;
+}
+#lightbox[current="1"] .lightbox--thumbnails img[count="1"] {
+  opacity: 0.5;
+  cursor: auto;
+}
+#lightbox[current="2"] .lightbox--gallery img[count="2"] {
+  opacity: 1;
+  visibility: visible;
+}
+#lightbox[current="2"] .lightbox--thumbnails img[count="2"] {
+  opacity: 0.5;
+  cursor: auto;
+}
+#lightbox[current="3"] .lightbox--gallery img[count="3"] {
+  opacity: 1;
+  visibility: visible;
+}
+#lightbox[current="3"] .lightbox--thumbnails img[count="3"] {
+  opacity: 0.5;
+  cursor: auto;
+}
+#lightbox[current="4"] .lightbox--gallery img[count="4"] {
+  opacity: 1;
+  visibility: visible;
+}
+#lightbox[current="4"] .lightbox--thumbnails img[count="4"] {
+  opacity: 0.5;
+  cursor: auto;
+}
+#lightbox[current="5"] .lightbox--gallery img[count="5"] {
+  opacity: 1;
+  visibility: visible;
+}
+#lightbox[current="5"] .lightbox--thumbnails img[count="5"] {
+  opacity: 0.5;
+  cursor: auto;
+}
+#lightbox[thumbnails=false] .lightbox--thumbnails, #lightbox[thumbnails=false] .lightbox--arrows {
+  display: none;
 }
 
 .animation--fade-in {

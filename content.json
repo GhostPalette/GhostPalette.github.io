@@ -6,6 +6,7 @@
         {
           "project_cover" : "logo_1.png",
           "project_label" : "Logos",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "logo_1",
@@ -27,6 +28,7 @@
         {
           "project_cover" : "pleroma.png",
           "project_label" : "Pleroma",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "pleroma_2",
@@ -43,6 +45,7 @@
         {
           "project_cover" : "cchengtv_1.png",
           "project_label" : "CChengTV - Twitch Banners",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "cchengtv_1",
@@ -59,6 +62,7 @@
         {
           "project_cover" : "fitatfifty.png",
           "project_label" : "Fit At Fifty",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "fitatfifty",
@@ -70,6 +74,7 @@
         {
           "project_cover" : "totalplatonic.png",
           "project_label" : "Totally Platonic - Handmade Jewelry Artist Website",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "totalplatonic",
@@ -96,6 +101,7 @@
         {
           "project_cover" : "visualnovel_ui_1.png",
           "project_label" : "Visual Novel UI",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "visualnovel_ui_1",
@@ -112,6 +118,7 @@
         {
           "project_cover" : "appwireframes.png",
           "project_label" : "App Wireframes",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "appwireframes",
@@ -128,6 +135,7 @@
         {
           "project_cover" : "sprouts_1.jpg",
           "project_label" : "Sprouts - Characters",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "sprouts_1",
@@ -149,6 +157,7 @@
         {
           "project_cover" : "tattoo_1.png",
           "project_label" : "Tattoos",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "tattoo_1",
@@ -165,6 +174,7 @@
         {
           "project_cover" : "panda_1.png",
           "project_label" : "Inspirational Panda",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "panda_1",
@@ -181,6 +191,7 @@
         {
           "project_cover" : "cchengtv.png",
           "project_label" : "CChengTV - Twitch Icon & Emotes",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "cchengtv",
@@ -197,6 +208,7 @@
         {
           "project_cover" : "photo_flower.jpg",
           "project_label" : "Floral Cafe in Japan - Photograph",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "photo_flower",
@@ -208,6 +220,7 @@
         {
           "project_cover" : "rpg_profiles.png",
           "project_label" : "RPG Character Profiles",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "rpg_profiles",
@@ -224,6 +237,7 @@
         {
           "project_cover" : "flowers.jpg",
           "project_label" : "Flowers - Crochet",
+          "project_featured" : "true",
           "project_items" : [
             {
               "image_name" : "flowers",
@@ -235,6 +249,7 @@
         {
           "project_cover" : "dicebag.jpg",
           "project_label" : "Dicebags - Crochet",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "dicebag",
@@ -246,6 +261,7 @@
         {
           "project_cover" : "hollowknight.jpg",
           "project_label" : "Hollow Knight Crochet",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "hollowknight",
@@ -257,6 +273,7 @@
         {
           "project_cover" : "cantinaband.jpg",
           "project_label" : "Crochet Star Wars Candtina Band",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "cantinaband",
@@ -268,6 +285,7 @@
         {
           "project_cover" : "toothless.jpg",
           "project_label" : "Crochet Toothless & Lightfury",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "toothless",
@@ -279,6 +297,7 @@
         {
           "project_cover" : "spacebox_1.jpg",
           "project_label" : "Painted Wooden Box - Space Themed",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "spacebox_1",
@@ -295,6 +314,7 @@
         {
           "project_cover" : "bill_cypher_1.png",
           "project_label" : "Bill Cypher from Gravity Falls - Wooden",
+          "project_featured" : "false",
           "project_items" : [
             {
               "image_name" : "bill_cypher_1",

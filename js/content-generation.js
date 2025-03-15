@@ -59,16 +59,30 @@ function populate_content(content) {
       // Element Variables & Populate Classes + Attributes
       const project_div = document.createElement("div");
       project_div.classList.add("work--project");
-      const project_cover_lightbox = document.createElement("a");
-      project_cover_lightbox.setAttribute("href", project_cover);
-      project_cover_lightbox.setAttribute("data-lightbox", project.project_cover);
-      project_cover_lightbox.setAttribute("data-title", project_label);
+      project_div.setAttribute('featured', project.project_featured);
       const project_cover_image = document.createElement("img");
       project_cover_image.setAttribute("src", project_cover);
+      project_cover_image.setAttribute("data_lightbox", project.project_cover);
+      project_cover_image.setAttribute("data-title", project_label);
+
+      const project_lightbox = document.createElement("div");
+      project_lightbox.classList.add("project--gallery");
+      var image_count = 0;
+      for( const item of project_items ) {
+        image_count++;
+        const lightbox_item = document.createElement("img");
+        const image_src = "https://ghostpalette.github.io/images/" + work_type + "/" + item.image_src;
+        lightbox_item.setAttribute("src", image_src);
+        lightbox_item.setAttribute("name", item.image_name);
+        lightbox_item.setAttribute("caption", item.image_caption);
+        lightbox_item.setAttribute("count", image_count);
+        project_lightbox.appendChild(lightbox_item);
+      }
+      project_lightbox.setAttribute("totalcount", image_count);
 
       // Nest Elements
-      project_cover_lightbox.appendChild(project_cover_image);
-      project_div.appendChild(project_cover_lightbox);
+      project_div.appendChild(project_cover_image);
+      project_div.appendChild(project_lightbox);
       // Append Content
       work_items_container.appendChild(project_div);
     }
